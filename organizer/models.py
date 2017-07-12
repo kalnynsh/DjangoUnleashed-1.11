@@ -2,8 +2,8 @@ from django.db import models
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=31)
-    slug = models.SlugField()
+    name = models.CharField(max_length=31, unique=True)
+    slug = models.SlugField(unique=True)
 
 
 class Startup(models.Model):
