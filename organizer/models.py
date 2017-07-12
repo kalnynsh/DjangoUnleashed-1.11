@@ -3,7 +3,7 @@ from django.db import models
 
 class Tag(models.Model):
     name = models.CharField(max_length=31, unique=True)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, help_text='A label for URL config.')
 
 
 class Startup(models.Model):
