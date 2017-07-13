@@ -24,6 +24,10 @@ class Startup(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
+        get_latest_by = 'founded_date'
+
 
 class NewsLink(models.Model):
     title = models.CharField(max_length=63)
