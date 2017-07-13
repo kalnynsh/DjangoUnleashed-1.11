@@ -37,3 +37,8 @@ class NewsLink(models.Model):
 
     def __str__(self):
         return "{}:{}".format(self.startup, self.title)
+
+    class Meta:
+        verbose_name = 'news article'
+        ordering = ['-pub_date']
+        get_latest_by = 'pub_date'
