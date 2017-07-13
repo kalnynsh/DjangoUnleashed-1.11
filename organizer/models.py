@@ -8,6 +8,9 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['name']
+
 
 class Startup(models.Model):
     name = models.CharField(max_length=31, db_index=True)
