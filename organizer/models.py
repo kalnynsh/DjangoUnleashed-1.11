@@ -6,7 +6,7 @@ class Tag(models.Model):
     slug = models.SlugField(unique=True, help_text='A label for URL config.')
 
     def __str__(self):
-        return self.name
+        return self.name.title()
 
     class Meta:
         ordering = ['name']
