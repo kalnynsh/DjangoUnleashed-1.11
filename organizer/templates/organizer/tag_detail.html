@@ -5,7 +5,12 @@
     <title>Tag details</title>
 </head>
 <body>
-<h2>{{ tag.name }}</h2>
+<h2>{{ tag.name|title }}</h2>
+<p>
+    Tag is associated with
+    {{ tag.startup_set.all|length }}
+    startup{{ tag.startup_set.all|length|pluralize }}.
+</p>
 {% if tag.startup_set.all %}
 <section>
     <h3>Startups</h3>
@@ -20,25 +25,24 @@
         {% endfor %}
     </ul>
 </section>
-{% else %}
-<p>This tag is not related to any startups.</p>
 {% endif %}
+{% if tag.blog_posts.all %}
 <section>
 <h3>Blog Posts</h3>
-{% if tag.blog_posts.all %}
 <ul>
     <!-- list of posts related to tag -->
     {% for post in tag.blog_posts.all %}
     <li>
         <a href="#">
-           {{ post.title }}
+           {{ post.title|title }}
         </a>
     </li>
     {% endfor %}
 </ul>
-{% else %}
-    <p>This tag is not related to any blog posts.</p>
-{% endif %}
 </section>
+{% endif %}
+{% if not tag.startup_set.all and not tag.blog_posts.all %}
+<p>This tag is not related to any content.</p>
+{% endif %}
 </body>
 </html>
