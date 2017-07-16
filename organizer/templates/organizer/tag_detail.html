@@ -9,7 +9,7 @@
 <p>
     Tag is associated with
     {{ tag.startup_set.all|length }}
-    startup{{ tag.startup_set.all|length|pluralize }}.
+    startup{{ tag.startup_set.all|pluralize }}.
 </p>
 {% if tag.startup_set.all %}
 <section>
