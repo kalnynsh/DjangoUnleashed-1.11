@@ -1,4 +1,4 @@
-from django.template import Context, loader
+from django.template import loader
 from django.http.response import HttpResponse
 
 from .models import Tag
