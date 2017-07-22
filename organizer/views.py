@@ -14,8 +14,7 @@ def homepage(request):
 
 
 def tag_detail(request, slug):
-    tag = get_object_or_404(Tag, slug__iexact=slug)
-    template = loader.get_template('organizer/tag_detail.html')
-    context = {'tag': tag}
 
-    return HttpResponse(template.render(context))
+    return render_to_response(
+        'organizer/tag_detail.html',
+        {'tag': get_object_or_404(Tag, slug__iexact=slug)})
