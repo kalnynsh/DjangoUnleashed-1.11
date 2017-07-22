@@ -1,5 +1,5 @@
 from django.template import loader
-from django.http.response import HttpResponse
+from django.http.response import Http404, HttpResponse
 
 from .models import Tag
 
@@ -14,7 +14,10 @@ def homepage(request):
 
 
 def tag_detail(request, slug):
-    tag = Tag.objects.get(slug__iexact=slug)
+    try:
+        tag = Tag.objects.get(slug__iexact=slug)
+    except Tag.DoesNotExist:
+        raise Http404
     template = loader.get_template('organizer/tag_detail.html')
     context = {'tag': tag}
 
