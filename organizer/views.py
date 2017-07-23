@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 
-from .models import Tag
+from .models import Tag, Startup
 
 
 def homepage(request):
@@ -30,6 +30,18 @@ def tag_detail(request, slug):
 def tag_list(request):
     template = 'organizer/tag_list.html'
     context = {'tag_list': Tag.objects.all()}
+
+    return render(
+        request,
+        template,
+        context
+    )
+
+
+def startup_list(request):
+    startup_list_obj = Startup.objects.all()
+    template = 'organizer/startup_list.html'
+    context = {'startup_list': startup_list_obj}
 
     return render(
         request,
