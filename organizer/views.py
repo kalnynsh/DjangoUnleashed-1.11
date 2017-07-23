@@ -48,3 +48,15 @@ def startup_list(request):
         template,
         context
     )
+
+
+def startup_detail(request, slug):
+    startup = get_object_or_404(Startup, slug__iexact=slug)
+    template = 'organizer/startup_detail.html'
+    context = {'startup': startup}
+
+    return render(
+        request,
+        template,
+        context
+    )
