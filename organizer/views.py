@@ -25,3 +25,14 @@ def tag_detail(request, slug):
         template,
         context
     )
+
+
+def tag_list(request):
+    template = 'organizer/tag_list.html'
+    context = {'tag_list': Tag.objects.all()}
+
+    return render(
+        request,
+        template,
+        context
+    )
