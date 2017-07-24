@@ -5,16 +5,16 @@ from .models import Post
 
 
 class PostListView(View):
+    template_name = 'blog/post_list.html'
 
     def get(self, request, parent_template=None):
         post_list_obj = Post.objects.all()
-        template = 'blog/post_list.html'
         context = {'post_list': post_list_obj,
                    'parent_template': parent_template, }
 
         return render(
             request,
-            template,
+            self.template_name,
             context
         )
 
