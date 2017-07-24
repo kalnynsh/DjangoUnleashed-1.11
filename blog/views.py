@@ -22,7 +22,7 @@ def post_detail(request, year, month, slug):
         pub__date__month=month,
         slug__iexact=slug)
     template = 'blog/post_detail.html'
-    context = {'post_detail': post_detail_obj}
+    context = {'post': post_detail_obj}
 
     return render(
         request,
