@@ -6,10 +6,11 @@ from .models import Post
 
 class PostListView(View):
 
-    def get(self, request):
+    def get(self, request, parent_template=None):
         post_list_obj = Post.objects.all()
         template = 'blog/post_list.html'
-        context = {'post_list': post_list_obj}
+        context = {'post_list': post_list_obj,
+                   'parent_template': parent_template, }
 
         return render(
             request,
