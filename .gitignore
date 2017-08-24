@@ -38,6 +38,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+node_modules/*
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -155,4 +156,9 @@ my_db.cnf
 settings.py.dev
 
 ## Log files
-/log/
+/log/*
+/_log/*
+
+## Staff for Front End
+/client/*
+/resource/*
