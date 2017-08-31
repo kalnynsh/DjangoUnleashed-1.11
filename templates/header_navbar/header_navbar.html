@@ -2,9 +2,9 @@
     <div class="container">
         <nav class="blog-nav">
             <a class="blog-nav-item active" href="/">Home</a>
-            <a class="blog-nav-item" href="/blog/">Blog</a>
-            <a class="blog-nav-item" href="/startup/">Startups</a>
-            <a class="blog-nav-item" href="/tag/">Tags</a>
+            <a class="blog-nav-item" href="{% url 'blog_post_list' %}">Blog</a>
+            <a class="blog-nav-item" href="{% url 'organizer_startup_list' %}">Startups</a>
+            <a class="blog-nav-item" href="{% url 'organizer_tag_list' %}">Tags</a>
         </nav>
     </div>
 </div>
