@@ -1,9 +1,13 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Tag(models.Model):
     name = models.CharField(max_length=31, unique=True)
     slug = models.SlugField(unique=True, help_text='A label for URL config.')
+
+    def get_absolute_url(self):
+        return reverse('organizer_tag_detail', kwargs={'slug': self.slug})
 
     def __str__(self):
         return self.name.title()
