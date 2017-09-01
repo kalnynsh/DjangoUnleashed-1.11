@@ -25,6 +25,9 @@ class Startup(models.Model):
     website = models.URLField(max_length=255)
     tags = models.ManyToManyField(Tag)
 
+    def get_absolute_url(self):
+        return reverse('organizer_startup_detail', kwargs={'slug': self.slug})
+
     def __str__(self):
         return self.name
 
