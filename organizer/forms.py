@@ -12,3 +12,6 @@ class TagForm(forms.Form):
             slug=self.cleaned_data['slug']
         )
         return new_tag
+
+    def clean_name(self):
+        return self.cleaned_data['name'].lower()
