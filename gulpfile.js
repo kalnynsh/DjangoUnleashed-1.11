@@ -10,6 +10,7 @@ var imagemin = require('gulp-imagemin')
 var concat  = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var gutil = require('gulp-util');
+var notify = require("gulp-notify");
 
 var bowserSync = require('browser-sync').create();
 var reload = bowserSync.reload;
