@@ -1,4 +1,4 @@
-Django==1.11.3
+Django==1.11.5
 pytz==2017.2
 # django-pylibmc
 django-toolbelt
