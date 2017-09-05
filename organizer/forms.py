@@ -26,10 +26,10 @@ class TagForm(SlugCleanMixin, forms.ModelForm):
 class NewsLinkForm(forms.ModelForm):
     class Meta:
         model = NewsLink
-        field = '__all__'
+        fields = '__all__'
 
 
 class StartupForm(SlugCleanMixin, forms.ModelForm):
     class Meta:
         model = Startup
-        field = '__all__'
+        fields = '__all__'
