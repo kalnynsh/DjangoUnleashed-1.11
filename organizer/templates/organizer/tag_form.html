@@ -1,0 +1,29 @@
+{% extends parent_template|default:"organizer/base_organizer.html" %}
+
+{% block title %}
+{{ block.super }} - Create Tag
+{% endblock %}
+
+{% block content %}
+<form action="{% url 'organizer_tag_create' %}" method="post">
+    {% csrf_token %}
+    <div class="input-group">
+        <p>
+            <label for="id_name">Name:</label>
+            <input id="id_name" maxlength="31" name="name" type="text"
+            class="form-control" placeholder="Username" aria-describedby="id_name"/>
+        </p>
+    </div>
+    <div class="input-group">
+        <p>
+            <label for="id_slug">Slug:</label>
+            <input id="id_slug" maxlength="31" name="slug" type="text"
+            class="form-control" placeholder="slug" aria-describedby="id_slug"/>
+            <span class="helptext input-group-addon">A label for URL config</span>
+        </p>
+    </div>
+    <button type="button">
+        Create Tag
+    </button>
+</form>
+{% endblock %}
