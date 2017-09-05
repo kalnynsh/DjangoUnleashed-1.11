@@ -38,6 +38,17 @@ def tag_list(request):
     )
 
 
+def tag_create(request):
+    template = 'organizer/tag_form.html'
+    context = {}
+
+    return render(
+        request,
+        template,
+        context
+    )
+
+
 def startup_list(request):
     startup_list_obj = Startup.objects.all()
     template = 'organizer/startup_list.html'
