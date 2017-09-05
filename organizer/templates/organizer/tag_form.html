@@ -26,6 +26,15 @@
         Create Tag
     </button>
     <div>
+        {% if form.name.errors %}
+        <ul class="custom_error_list">
+            {% for error in form.name.errors %}
+            <li>
+                <em>{{ error }}</em>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         {% if form.slug.errors %}
         <ul class="custom_error_list">
             {% for error in form.slug.errors %}
