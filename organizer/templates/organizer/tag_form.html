@@ -7,6 +7,16 @@
 {% block content %}
 <form action="{% url 'organizer_tag_create' %}" method="post">
     {% csrf_token %}
+    {% if form.non_field_errors %}
+    <div class="alert alert-danger">
+        {{ form.non_field_errors }}
+    </div>
+    {% endif %}
+    {% if form.name.errors %}
+    <div class="alert alert-danger">
+        {{ form.name.errors }}
+    </div>
+    {% endif %}
     <div class="input-group">
         <span class="input-group-addon" id="id_name">Name:</span>
         <div class="form-control">
@@ -14,6 +24,11 @@
         </div>
     </div>
     <br/>
+    {% if form.slug.errors %}
+    <div class="alert alert-danger">
+        {{ form.slug.errors }}
+    </div>
+    {% endif %}
     <div class="input-group">
         <span class="input-group-addon" id="id_slug">Slug:</span>
         <div class="form-control">
@@ -30,10 +45,5 @@
         </div>
     </div>
     <br/>
-    <div class="alert alert-danger">
-        {{ form.non_field_errors }}
-        {{ form.name.errors }}
-        {{ form.slug.errors }}
-    </div>
 </form>
 {% endblock %}
