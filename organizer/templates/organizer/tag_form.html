@@ -8,23 +8,26 @@
 <form action="{% url 'organizer_tag_create' %}" method="post">
     {% csrf_token %}
     <div class="input-group">
-
-            <label for="id_name">Name:</label>
-            <input id="id_name" maxlength="31" name="name" type="text"
+            <span class="input-group-addon" id="id_name">Name:</span>
+            <input  maxlength="31" name="name" type="text"
             class="form-control" placeholder="Username" aria-describedby="id_name"/>
-
     </div>
+    <br/>
     <div class="input-group">
-
-            <label for="id_slug">Slug:</label>
-            <input id="id_slug" maxlength="31" name="slug" type="text"
+        <span class="input-group-addon" id="id_slug">Slug:</span>
+            <input  maxlength="31" name="slug" type="text"
             class="form-control" placeholder="slug" aria-describedby="id_slug"/>
-            <span class="helptext input-group-addon">A label for URL config</span>
-
+            <span class="input-group-addon">A label for URL config</span>
     </div>
-    <button type="button" class="btn btn-primary">
-        Create Tag
-    </button>
+    <br/>
+    <div class="row">
+        <div class="col-md-3 col-md-offset-9">
+            <button type="button" class="btn btn-primary">
+                Create Tag
+            </button>
+        </div>
+    </div>
+    <br/>
     <div>
         {% if form.name.errors %}
         <ul class="custom_error_list">
