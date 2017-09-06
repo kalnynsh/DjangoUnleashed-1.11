@@ -9,14 +9,24 @@
     {% csrf_token %}
     <div class="input-group">
             <span class="input-group-addon" id="id_name">Name:</span>
+        {% if form.name.value %}
+            <input  maxlength="31" name="name" type="text"
+            class="form-control" value="{{ form.name.value }}" aria-describedby="id_name"/>
+        {% else %}
             <input  maxlength="31" name="name" type="text"
             class="form-control" placeholder="Username" aria-describedby="id_name"/>
+        {% endif %}
     </div>
     <br/>
     <div class="input-group">
         <span class="input-group-addon" id="id_slug">Slug:</span>
-            <input  maxlength="31" name="slug" type="text"
-            class="form-control" placeholder="slug" aria-describedby="id_slug"/>
+            {% if form.slug.value %}
+                <input  maxlength="31" name="slug" type="text"
+                class="form-control" value="{{ form.slug.value }}" aria-describedby="id_slug"/>
+            {% else %}
+                <input  maxlength="31" name="slug" type="text"
+                class="form-control" placeholder="slug" aria-describedby="id_slug"/>
+            {% endif %}
             <span class="input-group-addon">A label for URL config</span>
     </div>
     <br/>
