@@ -7,43 +7,28 @@
 {% block content %}
 <form action="{% url 'organizer_tag_create' %}" method="post">
     {% csrf_token %}
-    {% if form.non_field_errors %}
-    <div class="alert alert-danger">
-        {{ form.non_field_errors }}
-    </div>
-    {% endif %}
-    {% if form.name.errors %}
-    <div class="alert alert-danger">
-        {{ form.name.errors }}
-    </div>
-    {% endif %}
-    <div class="input-group">
-        <span class="input-group-addon" id="id_name">Name:</span>
-        <div class="form-control">
-            {{ form.name }}
+    {% for field in form %}
+        <div class="input-group">
+            <span class="input-group-addon">{{ field.label_tag }}</span>
+            <div class="form-control">{{ field }}</div>
+            {% if field.help_text %}
+                <span class="input-group-addon">{{ field.help_text }}</span>
+            {% endif %}
         </div>
-    </div>
-    <br/>
-    {% if form.slug.errors %}
-    <div class="alert alert-danger">
-        {{ form.slug.errors }}
-    </div>
-    {% endif %}
-    <div class="input-group">
-        <span class="input-group-addon" id="id_slug">Slug:</span>
-        <div class="form-control">
-            {{ form.slug }}
-        </div>
-        <span class="input-group-addon">{{ form.slug.help_text }}</span>
-    </div>
-    <br/>
+        <br>
+        {% if field.error %}
+            <div class="alert alert-danger">
+                {{ field.error }}
+            </div>
+        {% endif %}
+        <br>
+    {% endfor %}
     <div class="row">
-        <div class="col-md-3 col-md-offset-9">
+        <div class="col-md-offset-9 col-md-3">
             <button type="button" class="btn btn-primary">
                 Create Tag
             </button>
         </div>
     </div>
-    <br/>
 </form>
 {% endblock %}
