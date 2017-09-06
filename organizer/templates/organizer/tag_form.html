@@ -8,10 +8,10 @@
 <form action="{% url 'organizer_tag_create' %}" method="post">
     {% csrf_token %}
     <div class="input-group">
-            <span class="input-group-addon" id="id_name">Name:</span>
-            <div class="form-control">
-                {{ form.name }}
-            </div>
+        <span class="input-group-addon" id="id_name">Name:</span>
+        <div class="form-control">
+            {{ form.name }}
+        </div>
     </div>
     <br/>
     <div class="input-group">
