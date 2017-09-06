@@ -28,7 +28,16 @@
         </div>
     </div>
     <br/>
-    <div>
+    <div class="alert alert-danger">
+        {% if form.slug.errors %}
+        <ul class="custom_error_list">
+            {% for error in form.slug.errors %}
+            <li>
+                <em>{{ error }}</em>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         {% if form.name.errors %}
         <ul class="custom_error_list">
             {% for error in form.name.errors %}
@@ -38,12 +47,10 @@
             {% endfor %}
         </ul>
         {% endif %}
-        {% if form.slug.errors %}
+        {% if form.non_field_errors %}
         <ul class="custom_error_list">
-            {% for error in form.slug.errors %}
-            <li>
-                <em>{{ error }}</em>
-            </li>
+            {% for error in form.non_field_errors %}
+            <li><em>{{ error }}</em></li>
             {% endfor %}
         </ul>
         {% endif %}
