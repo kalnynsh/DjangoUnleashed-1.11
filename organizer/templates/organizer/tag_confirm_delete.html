@@ -1,0 +1,29 @@
+{% extends parent_template|default:"organizer/base_organizer.html" %}
+
+{% block title %}
+{{ block.super }} - Delete Tag
+{% endblock %}
+
+{% block content %}
+<form action="{{ tag.get_delete_url }}" method="post">
+    {% csrf_token %}
+
+        <div class="input-group">
+            <div class="form-control">
+                Are you sure, you want to delete tag {{ tag.name }}?
+            </div>
+        </div>
+        <br>
+    <div class="row">
+        <div class="col-md-offset-9 col-md-3">
+            <button type="button" class="btn btn-danger">
+                <a href="{{ tag.get_absolute_url }}">Cansel</a>
+            </button>
+            <br>
+            <button type="button" class="btn btn-primary">
+                Delete Tag
+            </button>
+        </div>
+    </div>
+</form>
+{% endblock %}
