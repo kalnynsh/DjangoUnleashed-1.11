@@ -164,3 +164,13 @@ h6, .h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+/*
+* Input for form
+*/
+.form-control > input {
+ margin: 0;
+ padding: 0;
+ width: 100%;
+ border: none;
+}
