@@ -1,5 +1,4 @@
-from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render, redirect
 
 from .models import Tag, Startup
 from .forms import TagForm
@@ -48,9 +47,11 @@ def tag_create(request):
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/tag/')
+            new_tag = form.save()
+            # Return new URL
+            # tag_url = new_tag.get_absolute_url()
+            #  HttpResponseRedirect(tag_url)
+            return redirect(new_tag)
 
     # if a GET (or any other method) we'll create a blank form
     else:
