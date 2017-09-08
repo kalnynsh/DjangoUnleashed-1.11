@@ -175,7 +175,7 @@ h6, .h6 {
  border: none;
 }
 
-/* blog-button-margin-bottom
+/* blog-button-margin
 */
 .blog-btn-margin {
     margin: 0;
@@ -185,6 +185,7 @@ h6, .h6 {
     color: #FFEDE5;
 }
 
-.blog-h2 {
-    margin: 0 0 20px 0;
+/* Tag list h2 margin-bottom */
+.blog-h2-tag-list {
+    margin-bottom: 20px;
 }
