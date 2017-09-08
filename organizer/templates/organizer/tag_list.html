@@ -6,16 +6,8 @@
 {% endblock %}
 
 {% block content %}
-<div class="page-header">
-    <h2>Tag List</h2>
-</div>
-<div>
-    <label class="label label-info">
-        <a href="{% url 'organizer_tag_create' %}">
-            Create New Tag
-        </a>
-    </label>
-</div>
+<h2 class="blog-h2">Tag List</h2>
+
 <ul class="list-group">
     {% for tag in tag_list %}
     <li class="list-group-item">
@@ -27,4 +19,11 @@
         <li><em>There are currently no Tags available.</em></li>
     {% endfor %}
 </ul>
+<div class="blog-btn-margin">
+    <button class="btn btn-info">
+        <a href="{% url 'organizer_tag_create' %}">
+            Create New Tag
+        </a>
+    </button>
+</div>
 {% endblock content %}

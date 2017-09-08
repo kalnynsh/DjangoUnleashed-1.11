@@ -174,3 +174,17 @@ h6, .h6 {
  width: 100%;
  border: none;
 }
+
+/* blog-button-margin-bottom
+*/
+.blog-btn-margin {
+    margin: 0;
+}
+
+.blog-btn-margin > .btn.btn-info > a {
+    color: #FFEDE5;
+}
+
+.blog-h2 {
+    margin: 0 0 20px 0;
+}
