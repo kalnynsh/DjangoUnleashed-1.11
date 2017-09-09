@@ -15,10 +15,10 @@
                 <span class="input-group-addon">{{ field.help_text }}</span>
             {% endif %}
         </div>
-        {% if field.error %}
+        {% if field.errors %}
         <br>
             <div class="alert alert-danger">
-                {{ field.error }}
+                {{ field.errors }}
             </div>
         {% endif %}
         <br>
