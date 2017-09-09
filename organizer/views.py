@@ -41,7 +41,7 @@ def startup_list(request):
     )
 
 
-class TagCreate(View):
+class TagCreateView(View):
     form_class = TagForm
     template_name = 'organizer/tag_form.html'
 
