@@ -5,30 +5,19 @@
 {% endblock %}
 
 {% block content %}
-<form action="{% url 'blog_post_create' %}" method="post">
-    {% csrf_token %}
-    {% for field in form %}
-        <div class="input-group">
-            <span class="input-group-addon">{{ field.label_tag }}</span>
-            <div class="form-control">{{ field }}</div>
-            {% if field.help_text %}
-                <span class="input-group-addon">{{ field.help_text }}</span>
-            {% endif %}
-        </div>
-        <br>
-        {% if field.errors %}
-            <div class="alert alert-danger">
-                {{ field.errors }}
-            </div>
-        {% endif %}
-        <br>
-    {% endfor %}
-    <div class="row">
-        <div class="col-md-offset-9 col-md-3">
-            <button type="button" class="btn btn-primary">
+<div>
+    <div>
+        <form action="{% url 'blog_post_create' %}" method="post">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+            <br>
+            <button type="submit" class="btn btn-primary">
                 Create Blog Post
             </button>
-        </div>
+
+        </form>
     </div>
-</form>
+</div>
 {% endblock %}
