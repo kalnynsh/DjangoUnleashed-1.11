@@ -6,7 +6,7 @@ from .models import Post
 from .forms import PostForm
 
 
-class PostCreate(View):
+class PostCreateView(View):
     form_class = PostForm
     template_name = 'blog/post_form.html'
 
