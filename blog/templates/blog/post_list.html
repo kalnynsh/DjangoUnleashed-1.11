@@ -34,5 +34,9 @@
 {% empty %}
 <p><em>No Blog Posts Available</em></p>
 {% endfor %}
-
+<button type="button" class="btn btn-info">
+    <a href="{% url 'blog_post_create' %}">
+        Write New Blog Post
+    </a>
+</button>
 {% endblock content %}
