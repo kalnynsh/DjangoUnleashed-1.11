@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import View
 
 from .models import Tag, Startup
-from .forms import TagForm
+from .forms import TagForm, StartupForm
 
 
 def homepage(request):
@@ -15,6 +15,22 @@ def homepage(request):
         template,
         context
     )
+
+
+class StartupCreateView(View):
+    form_class = StartupForm
+    template_name = 'organizer/startup_form.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {'form': self.form_class()})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_startup = bound_form.save()
+            return redirect(new_startup)
+        else:
+            return render(request, self.template_name, {'form': bound_form})
 
 
 def startup_detail(request, slug):
