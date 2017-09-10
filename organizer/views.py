@@ -5,18 +5,6 @@ from .models import Tag, Startup
 from .forms import TagForm, StartupForm
 
 
-def homepage(request):
-    tag_list = Tag.objects.all()
-    template = 'organizer/tag_list.html'
-    context = {'tag_list': tag_list}
-
-    return render(
-        request,
-        template,
-        context
-    )
-
-
 class StartupCreateView(View):
     form_class = StartupForm
     template_name = 'organizer/startup_form.html'
