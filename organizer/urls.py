@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-from .views import (tag_detail, tag_list, startup_list,
-                    startup_detail, StartupCreateView, TagCreateView)
+from .views import (TagCreateView, tag_detail, tag_list, StartupCreateView,
+                    startup_list, startup_detail, NewsLinkCreateView)
 
 
 urlpatterns = [
+    url(r'^newslink/create/$', NewsLinkCreateView.as_view(), name='organizer_newslink_create'),
     url(r'^startup/$', startup_list, name='organizer_startup_list'),
     url(r'^startup/create/$', StartupCreateView.as_view(), name='organizer_startup_create'),
     url(r'^startup/(?P<slug>[\w\-]+)/$', startup_detail, name='organizer_startup_detail'),
