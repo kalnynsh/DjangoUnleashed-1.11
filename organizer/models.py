@@ -42,6 +42,9 @@ class NewsLink(models.Model):
     link = models.URLField(max_length=255)
     startup = models.ForeignKey(Startup)
 
+    def get_absolute_url(self):
+        return self.startup.get_absolute_url()
+
     def __str__(self):
         return "{}:{}".format(self.startup, self.title)
 
