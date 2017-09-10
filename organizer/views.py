@@ -2,7 +2,23 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import View
 
 from .models import Tag, Startup
-from .forms import TagForm, StartupForm
+from .forms import TagForm, StartupForm, NewsLinkForm
+
+
+class NewsLinkCreateView(View):
+    form_class = NewsLinkForm
+    template_name = 'organizer/newslink_form.html'
+
+    def get(self, request):
+        return render(request, self.template_name, {'form': self.form_class()})
+
+    def post(self, request):
+        bound_form = self.form_class(request.POST)
+        if bound_form.is_valid():
+            new_newslink = bound_form.save()
+            return redirect(new_newslink)
+        else:
+            return render(request, self.template_name, {'form': bound_form})
 
 
 class StartupCreateView(View):
