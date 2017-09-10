@@ -7,15 +7,24 @@
 
 {% block content %}
 <h2>Startup List</h2>
-<ul>
+<ul class="list-group">
     {% for startup in startup_list %}
-    <li>
+    <li class="list-group-item">
         <a href="{{ startup.get_absolute_url }}">
             {{ startup.name }}
         </a>
     </li>
     {% empty %}
-    <li><em>No Startups Available</em></li>
+    <li class="list-group-item">
+        <em>No Startups Available</em>
+    </li>
     {% endfor %}
 </ul>
+<div class="blog-btn-margin">
+    <button class="btn btn-info">
+        <a href="{% url 'organizer_startup_create' %}">
+            Create New Startup
+        </a>
+    </button>
+</div>
 {% endblock content %}
