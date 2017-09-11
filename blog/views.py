@@ -52,3 +52,7 @@ class PostListView(View):
             self.template_name,
             context
         )
+
+
+class PostUpdateView(View):
+    pass
