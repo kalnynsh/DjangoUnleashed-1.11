@@ -15,9 +15,6 @@
                 {{ post.title|title }}
             </a>
         </h2>
-        <ul>
-            <li><a href="{{ pos.get_update_url }}">Edit Post</a></li>
-        </ul>
         <p>
             Written on:
             <time datetime="{{ post.pub_date|date:'Y-m-d' }}">
@@ -33,6 +30,11 @@
             Read more&hellip;
         </a>
     </p>
+    <div class="blog-label-edit-post">
+        <a href="{{ post.get_update_url }}">
+            <span class="label label-default">Edit Post</span>
+        </a>
+    </div>
 </article>
 {% empty %}
 <p><em>No Blog Posts Available</em></p>
