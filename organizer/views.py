@@ -95,4 +95,6 @@ def tag_list(request):
 
 
 class TagUpdateView(ObjectUpdateMixin, View):
-    pass
+    form_class = TagForm
+    model = Tag
+    template_name = 'organizer/tag_form_update.html'
