@@ -8,6 +8,7 @@
 <form action="{% url 'organizer_startup_create' %}" method="post">
     {% csrf_token %}
     {% for field in form %}
+
         <div class="input-group">
             <span class="input-group-addon">{{ field.label_tag }}</span>
             <div class="form-control">{{ field }}</div>
@@ -16,12 +17,14 @@
             {% endif %}
         </div>
         <br>
+
         {% if field.errors %}
             <div class="alert alert-danger">
                 {{ field.errors }}
             </div>
+            <br>
         {% endif %}
-        <br>
+
     {% endfor %}
     <div class="row">
         <div class="col-md-offset-9 col-md-3">

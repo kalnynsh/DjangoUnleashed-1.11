@@ -188,7 +188,8 @@ h6, .h6 {
 /* Tag list h2 margin-bottom */
 .blog-h2-tag-list,
 .blog-label-edit-post,
-.blog-button-edit-post
+.blog-button-edit-post,
+.blog-label-edit-tag
 {
     margin-bottom: 20px;
 }
