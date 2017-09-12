@@ -186,14 +186,9 @@ h6, .h6 {
 }
 
 /* Tag list h2 margin-bottom */
-.blog-h2-tag-list {
-    margin-bottom: 20px;
-}
-
-.blog-label-edit-post {
-    margin-bottom: 20px;
-}
-
-.blog-button-edit-post {
+.blog-h2-tag-list,
+.blog-label-edit-post,
+.blog-button-edit-post
+{
     margin-bottom: 20px;
 }
