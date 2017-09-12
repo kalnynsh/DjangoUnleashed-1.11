@@ -13,6 +13,9 @@
         <a href="{{ startup.get_absolute_url }}">
             {{ startup.name }}
         </a>
+        <a href="{{ startup.get_update_url }}">
+            <span>Edit Startup</span>
+        </a>
     </li>
     {% empty %}
     <li class="list-group-item">
