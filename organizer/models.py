@@ -42,13 +42,16 @@ class NewsLink(models.Model):
     link = models.URLField(max_length=255)
     startup = models.ForeignKey(Startup)
 
-    def get_absolute_url(self):
-        return self.startup.get_absolute_url()
-
-    def __str__(self):
-        return "{}:{}".format(self.startup, self.title)
-
     class Meta:
         verbose_name = 'news article'
         ordering = ['-pub_date']
         get_latest_by = 'pub_date'
+
+    def __str__(self):
+        return "{}:{}".format(self.startup, self.title)
+
+    def get_absolute_url(self):
+        return self.startup.get_absolute_url()
+
+    def get_update_url(self):
+        return reverse('organizer_newslink_update', kwargs={'pk': self.pk})
