@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-from .views import (TagCreateView, tag_detail, tag_list, StartupCreateView,
-                    startup_list, startup_detail, NewsLinkCreateView, NewsLinkUpdateView)
+from .views import (NewsLinkCreateView, NewsLinkUpdateView,
+                    TagCreateView, TagUpdateView, tag_detail, tag_list,
+                    StartupCreateView, startup_list, startup_detail,
+                    )
 
 
 urlpatterns = [
@@ -28,4 +30,5 @@ urlpatterns = [
     url(r'^tag/$', tag_list, name='organizer_tag_list'),
     url(r'^tag/create/$', TagCreateView.as_view(), name='organizer_tag_create'),
     url(r'^tag/(?P<slug>[\w\-]+)/$', tag_detail, name='organizer_tag_detail'),
+    url(r'^tag/(?P<slug>[\w\-]+)/update/$', TagUpdateView.as_view(), name='organizer_tag_update'),
 ]

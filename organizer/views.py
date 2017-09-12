@@ -3,7 +3,7 @@ from django.views.generic import View
 
 from .models import Tag, Startup, NewsLink
 from .forms import TagForm, StartupForm, NewsLinkForm
-from .utils import ObjectCreateMixin
+from .utils import ObjectCreateMixin, ObjectUpdateMixin
 
 
 class NewsLinkCreateView(ObjectCreateMixin, View):
@@ -92,3 +92,7 @@ def tag_list(request):
         template,
         context
     )
+
+
+class TagUpdateView(ObjectUpdateMixin, View):
+    pass
