@@ -8,9 +8,6 @@
 
     <header>
         <h2>{{ post.title|title }}</h2>
-        <ul>
-            <li><a href="{{ post.get_update_url }}">Edit Post</a></li>
-        </ul>
         <p>
             Written on
             <time datetime="{{ post.pub_date|date:'Y-m-d' }}">
@@ -21,6 +18,11 @@
 
     <div>
         {{ post.text|linebreaks }}
+    </div>
+    <div class="blog-button-edit-post">
+        <button type="button" class="btn btn-default">
+            <a href="{{ post.get_update_url }}">Edit Post</a>
+        </button>
     </div>
         {% if post.startups.all or post.tags.all %}
             <footer> <!--The footer for article -->
