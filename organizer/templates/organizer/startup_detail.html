@@ -10,6 +10,11 @@
 <article>
 
     <h2>{{ startup.name }}</h2>
+    <div>
+        <a href="{{ startup.get_update_url }}">
+            <span class="label label-default">Edit Startup</span>
+        </a>
+    </div>
     <dl>
         <dt>Date Founded</dt>
         <dd>{{ startup.founded_date|date:"F jS, Y" }}</dd>
