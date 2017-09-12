@@ -17,8 +17,10 @@ class NewsLinkUpdateView(View):
 
     def get(self, request, pk):
         newslink = get_object_or_404(NewsLink, pk=pk)
-        context = {'form': self.form_class(instance=newslink),
-                   'newslink': newslink, }
+        context = {
+            'form': self.form_class(instance=newslink),
+            'newslink': newslink,
+        }
         return render(request, self.template_name, context)
 
     def post(self, request, pk):
