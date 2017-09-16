@@ -23,7 +23,8 @@ class SlugCleanMixin:
 class StartupForm(SlugCleanMixin, forms.ModelForm):
     class Meta:
         model = Startup
-        fields = '__all__'
+        fields = ['name', 'slug', 'description', 'founded_date',
+                  'contact', 'website', 'tags']
 
 
 class TagForm(SlugCleanMixin, forms.ModelForm):
