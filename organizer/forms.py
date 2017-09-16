@@ -30,7 +30,7 @@ class StartupForm(SlugCleanMixin, forms.ModelForm):
 class TagForm(SlugCleanMixin, forms.ModelForm):
     class Meta:
         model = Tag
-        fields = '__all__'  # ['name', 'slug']
+        fields = ['name', 'slug']
 
     def clean_name(self):
         return self.cleaned_data['name'].lower()
