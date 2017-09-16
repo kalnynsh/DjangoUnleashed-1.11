@@ -6,7 +6,7 @@ class ObjectCreateMixin:
     template_name = ''
 
     def get(self, request):
-        return render(request, self.template_name, {'from': self.form_class()})
+        return render(request, self.template_name, {'form': self.form_class()})
 
     def post(self, request):
         bound_form = self.form_class(request.POST)
