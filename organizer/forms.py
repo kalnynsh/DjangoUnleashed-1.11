@@ -7,7 +7,7 @@ from .models import NewsLink, Startup, Tag
 class NewsLinkForm(forms.ModelForm):
     class Meta:
         model = NewsLink
-        fields = '__all__'
+        fields = ['title', 'pub_date', 'link', 'startup']
 
 
 class SlugCleanMixin:
