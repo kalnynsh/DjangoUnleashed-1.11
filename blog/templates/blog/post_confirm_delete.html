@@ -9,14 +9,14 @@
         <form action="{{ post.get_delete_url }}" method="post">
 
             {% csrf_token %}
-            <p>
+            <p class="blog-confirm-delete-post">
                 <span class="label label-danger">
                     Are you sure?
                     You really want delete the blog post titled {{ post.title }}?
                 </span>
             </p>
             <div class="blog-btns-cancel-delete">
-                <button type="submit" class="btn btn-default">
+                <button type="submit" class="btn btn-info">
                     <a href="{{ post.get_absolute_url }}">
                         Cancel
                     </a>

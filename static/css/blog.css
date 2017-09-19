@@ -227,5 +227,16 @@ h6, .h6 {
 #post_confirm_delete.html
 .blog-btns-cancel-delete {
     display: block;
-    margin-top: 16px;
+    margin-top: 24px;
+}
+
+.blog-btns-cancel-delete > .btn.btn-info {
+    margin-right: 12px;
+}
+
+
+.blog-confirm-delete-post {
+    line-height: 1.8;
+    font-size: 2.5rem;
+    margin-bottom: 16px;
 }
