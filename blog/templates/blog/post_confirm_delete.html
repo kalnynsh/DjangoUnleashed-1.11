@@ -1,12 +1,31 @@
 {% extends parent_template|default:"blog/base_blog.html" %}
 {% load staticfiles %}
 
-{{ block.super }} - {{ post.title|title }}
+{{ block.super }} - Delete Blog post
 
 {% block content %}
-<article>
+<div>
+    <div>
+        <form action="{{ post.get_delete_url }}" method="post">
 
-
-</article>
-
+            {% csrf_token %}
+            <p>
+                <span class="label label-danger">
+                    Are you sure?
+                    You really want delete the blog post titled {{ post.title }}?
+                </span>
+            </p>
+            <div class="blog-btns-cancel-delete">
+                <button type="submit" class="btn btn-default">
+                    <a href="{{ post.get_absolute_url }}">
+                        Cancel
+                    </a>
+                </button>
+                <button type="submit" class="btn btn-warning">
+                    Delete Blog Post
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock content %}
