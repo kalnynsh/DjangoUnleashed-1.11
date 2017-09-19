@@ -187,17 +187,29 @@ h6, .h6 {
 
 /* Tag list h2 margin-bottom */
 .blog-h2-tag-list,
-.blog-label-edit-post,
 .blog-label-edit-tag
 {
     margin-bottom: 20px;
 }
 
+# post_list.html
+.blog-label-edit-delete-post
+{
+     display: block;
+     margin-bottom: 40px;
+}
+
+.blog-post-list-h2 {
+    margin-top: 24px;
+}
+
+# post_detail.html
 .blog-button-edit-post
 {
     display: inline-block;
     margin-bottom: 20px;
     margin-top: 12px;
+    padding: 2px;
 }
 
 .blog-button-edit-post > .btn.btn-primary > a {
