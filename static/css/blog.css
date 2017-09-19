@@ -188,8 +188,26 @@ h6, .h6 {
 /* Tag list h2 margin-bottom */
 .blog-h2-tag-list,
 .blog-label-edit-post,
-.blog-button-edit-post,
 .blog-label-edit-tag
 {
     margin-bottom: 20px;
+}
+
+.blog-button-edit-post
+{
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 12px;
+}
+
+.blog-button-edit-post > .btn.btn-primary > a {
+    color: #fff;
+}
+
+.blog-button-delete-post
+{
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 12px;
+    margin-left: 6px;
 }

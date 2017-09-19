@@ -1,0 +1,12 @@
+{% extends parent_template|default:"blog/base_blog.html" %}
+{% load staticfiles %}
+
+{{ block.super }} - {{ post.title|title }}
+
+{% block content %}
+<article>
+
+
+</article>
+
+{% endblock content %}
