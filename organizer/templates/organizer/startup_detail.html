@@ -46,11 +46,14 @@
                 <a href="{{ newslink.link }}">
                     {{ newslink.title|title }}
                 </a>
-                <button class="btn btn-info">
-                    <a href="{{ newslink.get_update_url }}">
-                       <span class="badge">Edit Link</span>
-                    </a>
-                </button>
+
+                <a href="{{ newslink.get_update_url }}">
+                       <span class="label label-info">Edit Link</span>
+                </a>
+
+                <a href="{{ newslink.get_delete_url }}">
+                       <span class="label label-danger">Delete Link</span>
+                </a>
             </li>
             {% endfor %}
         </ul>
