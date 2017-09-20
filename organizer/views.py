@@ -72,6 +72,10 @@ class StartupUpdateView(ObjectUpdateMixin, View):
     template_name = 'organizer/startup_form_update.html'
 
 
+class NewsLinkDeleteView(View):
+    pass
+
+
 class TagCreateView(ObjectCreateMixin, View):
     form_class = TagForm
     template_name = 'organizer/tag_form.html'
