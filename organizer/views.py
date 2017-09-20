@@ -37,6 +37,22 @@ class NewsLinkUpdateView(View):
             return render(request, self.template_name, context)
 
 
+class NewsLinkDeleteView(View):
+
+    def get(self, request, pk):
+        newslink = get_object_or_404(NewsLink, pk=pk)
+
+        return render('organizer/newslink_confirm_delete.html',
+                      {'newslink': newslink})
+
+    def post(self, request, pk):
+        newslink = get_object_or_404(NewsLink, pk=pk)
+        startup = newslink.startup
+        newslink.delete()
+
+        return redirect(startup)
+
+
 class StartupCreateView(ObjectCreateMixin, View):
     form_class = StartupForm
     template_name = 'organizer/startup_form.html'
@@ -70,10 +86,6 @@ class StartupUpdateView(ObjectUpdateMixin, View):
     form_class = StartupForm
     model = Startup
     template_name = 'organizer/startup_form_update.html'
-
-
-class NewsLinkDeleteView(View):
-    pass
 
 
 class TagCreateView(ObjectCreateMixin, View):
