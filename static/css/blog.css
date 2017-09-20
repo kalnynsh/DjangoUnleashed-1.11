@@ -240,3 +240,12 @@ h6, .h6 {
     font-size: 2.5rem;
     margin-bottom: 16px;
 }
+
+.blog-btn-new-blog {
+    margin-top: 20px;
+}
+
+.blog-btn-new-blog > .btn.btn-info > a {
+    color: #fff;
+    font-weight: 600;
+}
