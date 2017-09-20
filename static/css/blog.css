@@ -177,12 +177,14 @@ h6, .h6 {
 
 /* blog-button-margin
 */
-.blog-btn-margin {
-    margin: 0;
+.blog-btn-add-article {
+    margin-bottom: 24px;
+    margin-left: 16px;
 }
 
-.blog-btn-margin > .btn.btn-info > a {
+.blog-btn-add-article > .btn.btn-info > a {
     color: #FFEDE5;
+    font-weight: 600;
 }
 
 /* Tag list h2 margin-bottom */
@@ -252,4 +254,14 @@ h6, .h6 {
 
 .blog-edit-startup {
     margin-bottom: 16px;
+}
+
+.blog-link-edit-delete {
+    list-style: none;
+    margin-left: -40px;
+}
+
+.blog-link-edit-delete li {
+    display: inline-block;
+    margin-right: 12px;
 }
