@@ -125,5 +125,5 @@ class TagUpdateView(ObjectUpdateMixin, View):
 
 class TagDeleteView(ObjectDeleteMixin, View):
     model = Tag
-    success_url = reverse_lazy('organizer_tag_list.html')
+    success_url = reverse_lazy('organizer_tag_list')
     template_name = 'organizer/tag_confirm_delete.html'
