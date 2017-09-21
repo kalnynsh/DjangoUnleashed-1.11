@@ -277,3 +277,8 @@ h6, .h6 {
     display: inline-block;
     margin-right: 12px;
 }
+
+.blog-btn-tag-cancel-delete .col-md-offset-2.col-md-4 .btn.btn-primary a
+{
+    color: #fff;
+}

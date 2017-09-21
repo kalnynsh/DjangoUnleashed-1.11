@@ -15,14 +15,15 @@
         </div>
         <br>
     <div class="row">
-        <div class="col-md-offset-9 col-md-3">
-            <button type="button" class="btn btn-danger">
-                <a href="{{ tag.get_absolute_url }}">Cancel</a>
-            </button>
-            <br>
-            <button type="submit" class="btn btn-primary">
-                Delete Tag
-            </button>
+        <div class="blog-btn-tag-cancel-delete">
+            <div class="col-md-offset-2 col-md-4">
+                <button type="button" class="btn btn-primary">
+                    <a href="{{ tag.get_absolute_url }}">Cancel</a>
+                </button>
+                <button type="submit" class="btn btn-danger">
+                    Delete Tag
+                </button>
+            </div>
         </div>
     </div>
 </form>
