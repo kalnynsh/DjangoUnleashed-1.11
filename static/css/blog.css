@@ -188,10 +188,22 @@ h6, .h6 {
 }
 
 /* Tag list h2 margin-bottom */
-.blog-h2-tag-list,
-.blog-label-edit-tag
+.blog-h2-tag-list
 {
     margin-bottom: 20px;
+}
+
+.blog-tag-edit-delete {
+    margin-bottom: 20px;
+}
+
+.blog-tag-edit-delete li {
+    display: inline-block;
+}
+
+.blog-tag-edit-delete li:first-child {
+    margin-left: -40px;
+    margin-right: 6px;
 }
 
 # post_list.html
