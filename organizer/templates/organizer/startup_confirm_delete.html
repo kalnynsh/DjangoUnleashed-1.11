@@ -1,0 +1,30 @@
+{% extends parent_template|default:"organizer/base_organizer.html" %}
+
+{% block title %}
+{{ block.super }} - Delete Tag
+{% endblock %}
+
+{% block content %}
+<form action="{{ startup.get_delete_url }}" method="post">
+    {% csrf_token %}
+
+        <div class="input-group">
+            <div class="form-control">
+                Are you sure, you want to delete startup {{ startup.name }}?
+            </div>
+        </div>
+        <br>
+    <div class="row">
+        <div class="blog-btn-tag-cancel-delete">
+            <div class="col-md-offset-2 col-md-4">
+                <button type="button" class="btn btn-primary">
+                    <a href="{{ startup.get_absolute_url }}">Cancel</a>
+                </button>
+                <button type="submit" class="btn btn-danger">
+                    Delete Startup
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
