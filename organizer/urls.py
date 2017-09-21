@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 
 from .views import (NewsLinkCreateView, NewsLinkUpdateView, NewsLinkDeleteView,
-                    TagCreateView, TagUpdateView, tag_detail, tag_list,
+                    TagCreateView, TagUpdateView, tag_detail, tag_list, TagDeleteView,
                     StartupCreateView, startup_list, startup_detail, StartupUpdateView,
                     )
 
@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^tag/$', tag_list, name='organizer_tag_list'),
     url(r'^tag/create/$', TagCreateView.as_view(), name='organizer_tag_create'),
     url(r'^tag/(?P<slug>[\w\-]+)/$', tag_detail, name='organizer_tag_detail'),
+    url(r'^tag/(?P<slug>[\w\-]+)/delete/$', TagDeleteView.as_view(), name='organizer_tag_delete'),
     url(r'^tag/(?P<slug>[\w\-]+)/update/$', TagUpdateView.as_view(), name='organizer_tag_update'),
 ]
