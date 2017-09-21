@@ -18,6 +18,7 @@ from django.conf.urls import url
 from .views import (NewsLinkCreateView, NewsLinkUpdateView, NewsLinkDeleteView,
                     TagCreateView, TagUpdateView, tag_detail, tag_list, TagDeleteView,
                     StartupCreateView, startup_list, startup_detail, StartupUpdateView,
+                    StartupDeleteView,
                     )
 
 
@@ -28,6 +29,7 @@ urlpatterns = [
     url(r'^startup/$', startup_list, name='organizer_startup_list'),
     url(r'^startup/create/$', StartupCreateView.as_view(), name='organizer_startup_create'),
     url(r'^startup/(?P<slug>[\w\-]+)/$', startup_detail, name='organizer_startup_detail'),
+    url(r'^startup/(?P<slug>[\w\-]+)/delete/$', StartupDeleteView.as_view(), name='organizer_startup_delete'),
     url(r'^startup/(?P<slug>[\w\-]+)/update/$', StartupUpdateView.as_view(), name='organizer_startup_update'),
     url(r'^tag/$', tag_list, name='organizer_tag_list'),
     url(r'^tag/create/$', TagCreateView.as_view(), name='organizer_tag_create'),
