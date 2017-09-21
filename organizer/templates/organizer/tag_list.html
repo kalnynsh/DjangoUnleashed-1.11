@@ -15,7 +15,10 @@
             {{ tag.name|title }}
         </a>
         <a href="{{ tag.get_update_url }}">
-            <span class="label label-default">Edit Tag</span>
+            <span class="label label-info">Edit Tag</span>
+        </a>
+        <a href="{{ tag.get_delete_url }}">
+            <span class="label label-danger">Delete Tag</span>
         </a>
     </li>
     {% empty %}
