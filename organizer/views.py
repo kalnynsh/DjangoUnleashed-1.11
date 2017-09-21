@@ -59,6 +59,12 @@ class StartupCreateView(ObjectCreateMixin, View):
     template_name = 'organizer/startup_form.html'
 
 
+class StartupDeleteView(ObjectDeleteMixin, View):
+    model = Startup
+    success_url = reverse_lazy('organizer_startup_list')
+    template_name = 'organizer/startup_confirm_delete.html'
+
+
 def startup_detail(request, slug):
     startup = get_object_or_404(Startup, slug__iexact=slug)
     template = 'organizer/startup_detail.html'
