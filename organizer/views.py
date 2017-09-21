@@ -1,9 +1,10 @@
+from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import View
 
-from .models import Tag, Startup, NewsLink
 from .forms import TagForm, StartupForm, NewsLinkForm
-from .utils import ObjectCreateMixin, ObjectUpdateMixin
+from .models import Tag, Startup, NewsLink
+from .utils import ObjectCreateMixin, ObjectUpdateMixin, ObjectDeleteMixin
 
 
 class NewsLinkCreateView(ObjectCreateMixin, View):
@@ -120,3 +121,9 @@ class TagUpdateView(ObjectUpdateMixin, View):
     form_class = TagForm
     model = Tag
     template_name = 'organizer/tag_form_update.html'
+
+
+class TagDeleteView(ObjectDeleteMixin, View):
+    model = Tag
+    success_url = reverse_lazy('organizer_tag_list.html')
+    template_name = 'organizer/tag_confirm_delete.html'
