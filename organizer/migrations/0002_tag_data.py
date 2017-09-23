@@ -23,7 +23,7 @@ TAGS = (
     ("video games", "video-games"),
     ("web", "web"),
     ("zend", "zend"),
-    ("php", "php"),
+    ("php frameworks", "php-frameworks"),
 )
 
 
