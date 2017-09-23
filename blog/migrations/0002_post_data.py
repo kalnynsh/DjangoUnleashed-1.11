@@ -9,6 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('blog', '0001_initial'),
+        ('organizer', '0003_startup_data'),
     ]
 
     operations = [
