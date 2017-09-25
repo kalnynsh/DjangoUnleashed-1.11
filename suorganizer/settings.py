@@ -88,7 +88,12 @@ DATABASES = {
 }
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+SERVER_EMAIL = 'contact@example.com'
+DEFAULT_FROM_EMAIL = 'no-reply@example.com'
+EMAIL_SUBJECT_PREFIX = '[Startup Organizer] '
+MANAGERS = (
+    ('Us', 'ourselves@example.com')
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
