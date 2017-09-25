@@ -282,3 +282,17 @@ h6, .h6 {
 {
     color: #fff;
 }
+
+.blog-message {
+    list-style: none;
+
+}
+
+.blog-message li {
+    margin-left: -24px;
+}
+
+.blog-message li span.label {
+    font-size: 1.6rem;
+    padding: 6px;
+}

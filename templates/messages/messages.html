@@ -1,15 +1,24 @@
 {% if messages %}
-<div>
-    <ul>
-        {% for message in messages %}
-            {% if message.tags %}
-                <li class="{{ message.tags }}">
-            {% else %}
-                <li>
-            {% endif %}
-                    {{ message }}
-                </li>
-        {% endfor %}
-    </ul>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm-8">
+            <ul class="blog-message">
+                {% for message in messages %}
+                    {% if message.tags %}
+                        <li class="{{ message.tags }}">
+                    {% else %}
+                        <li>
+                    {% endif %}
+                            <span class="label label-{{ message.tags }}">
+                                {{ message }}
+                            </span>
+                        </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
 </div>
 {% endif %}
