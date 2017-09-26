@@ -29,7 +29,7 @@ class ContactForm(forms.Form):
             email, text
         )
         try:
-            # shotcut for send_email
+            # shortcut for send_emails
             mail_managers(full_reason, body)
         except BadHeaderError:
             self.add_error(
