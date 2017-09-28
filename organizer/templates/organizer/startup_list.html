@@ -34,12 +34,13 @@
     </button>
 </div>
 {% if is_paginated %}
-    <nav class="blog-pagination">
-        <ul>
+    <nav aria-label="...">
+        <ul class="pager">
             {% if startup_list.has_previous %}
                 <li>
-                    <a class="btn btn-outline-primary"
+                    <a
                        href="?page={{ startup_list.previous_page_number }}">
+                        <span aria-hidden="true">&larr;</span>
                         Previous
                     </a>
                 </li>
@@ -50,9 +51,10 @@
             </li>
             {% if startup_list.has_next %}
                 <li>
-                    <a class="btn btn-outline-secondary"
+                    <a
                        href="?page={{ startup_list.next_page_number }}">
                         Next
+                        <span aria-hidden="true">&rarr;</span>
                     </a>
                 </li>
             {% endif %}
