@@ -33,26 +33,28 @@
         </a>
     </button>
 </div>
-<nav class="blog-pagination">
-    <ul>
-        {% if startup_list.has_previous %}
+{% if startup_list.has_other_pages %}
+    <nav class="blog-pagination">
+        <ul>
+            {% if startup_list.has_previous %}
+                <li>
+                    <a class="btn btn-outline-primary" href="">
+                        Previous
+                    </a>
+                </li>
+            {% endif %}
             <li>
-                <a class="btn btn-outline-primary" href="">
-                    Previous
-                </a>
+                Page {{ startup_list.number }}
+                of {{ paginator.num_pages }}
             </li>
-        {% endif %}
-        <li>
-            Page {{ startup_list.number }}
-            of {{ paginator.num_pages }}
-        </li>
-        {% if startup_list.has_next %}
-            <li>
-                <a class="btn btn-outline-secondary" href="">
-                    Next
-                </a>
-            </li>
-        {% endif %}
-    </ul>
-</nav>
+            {% if startup_list.has_next %}
+                <li>
+                    <a class="btn btn-outline-secondary" href="">
+                        Next
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}
 {% endblock content %}
