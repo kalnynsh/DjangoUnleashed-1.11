@@ -34,14 +34,16 @@
     </button>
 </div>
 <nav class="blog-pagination">
+    {% if startup_list.has_previous %}
+    <li>
+        <a class="btn btn-outline-primary" href="">
+            Previous
+        </a>
+    </li>
+    {% endif %}
     <li>
         Page {{ startup_list.number }}
         of {{ paginator.num_pages }}
-    </li>
-    <li>
-        <a class="btn btn-outline-primary" href="#">
-            Older
-        </a>
     </li>
     <li>
         <a class="btn btn-outline-secondary disabled" href="#">
