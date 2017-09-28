@@ -77,16 +77,18 @@ def startup_detail(request, slug):
     )
 
 
-def startup_list(request):
-    startup_list_obj = Startup.objects.all()
-    template = 'organizer/startup_list.html'
-    context = {'startup_list': startup_list_obj}
+class StartupListView(View):
+    template_name = 'organizer/startup_list.html'
 
-    return render(
-        request,
-        template,
-        context
-    )
+    def get(self, request):
+        startups = Startup.objects.all()
+        context = {'startup_list': startups}
+
+        return render(
+            request,
+            self.template_name,
+            context
+        )
 
 
 class StartupUpdateView(ObjectUpdateMixin, View):
