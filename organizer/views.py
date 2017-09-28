@@ -87,6 +87,7 @@ class StartupListView(View):
         paginator = Paginator(startups, self.paginate_by)
         page = paginator.page(1)
         context = {
+            'is_paginated': page.has_other_pages(),
             'paginator': paginator,
             'startup_list': page
         }

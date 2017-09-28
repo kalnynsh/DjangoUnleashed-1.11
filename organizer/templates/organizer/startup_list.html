@@ -33,7 +33,7 @@
         </a>
     </button>
 </div>
-{% if startup_list.has_other_pages %}
+{% if is_paginated %}
     <nav class="blog-pagination">
         <ul>
             {% if startup_list.has_previous %}
