@@ -1,7 +1,8 @@
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views.generic import View
-from django.core.paginator import Paginator
+from django.core.paginator import (Paginator,
+                                   EmptyPage, PageNotAnInteger)
 
 from .forms import TagForm, StartupForm, NewsLinkForm
 from .models import Tag, Startup, NewsLink
@@ -87,7 +88,12 @@ class StartupListView(View):
         startups = Startup.objects.all()
         paginator = Paginator(startups, self.paginate_by)
         page_number = request.GET.get(self.page_kwarg)
-        page = paginator.page(page_number)
+        try:
+            page = paginator.page(page_number)
+        except PageNotAnInteger:
+            page = paginator.page(1)  # First
+        except EmptyPage:
+            page = paginator.page(paginator.num_pages)  # Last
         context = {
             'is_paginated': page.has_other_pages(),
             'paginator': paginator,
