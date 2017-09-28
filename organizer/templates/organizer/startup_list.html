@@ -45,10 +45,12 @@
         Page {{ startup_list.number }}
         of {{ paginator.num_pages }}
     </li>
+    {% if startup_list.has_next %}
     <li>
-        <a class="btn btn-outline-secondary disabled" href="#">
-            Newer
+        <a class="btn btn-outline-secondary" href="">
+            Next
         </a>
     </li>
+    {% endif %}
 </nav>
 {% endblock content %}
