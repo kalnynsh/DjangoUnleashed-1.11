@@ -146,15 +146,20 @@ def tag_detail(request, slug):
     )
 
 
-def tag_list(request):
-    template = 'organizer/tag_list.html'
-    context = {'tag_list': Tag.objects.all()}
+class TagListView(View):
+    template_name = 'organizer/tag_list.html'
 
-    return render(
-        request,
-        template,
-        context
-    )
+    def get(self, request):
+        tags = Tag.objects.all()
+        context = {
+            'tag_list': tags,
+        }
+
+        return render(
+            request,
+            self.template_name,
+            context
+        )
 
 
 class TagUpdateView(ObjectUpdateMixin, View):
