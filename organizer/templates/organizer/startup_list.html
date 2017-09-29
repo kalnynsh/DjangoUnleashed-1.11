@@ -39,7 +39,7 @@
             {% if previous_page_url %}
                 <li>
                     <a
-                       href="?page={{ previous_page_url }}">
+                       href="{{ previous_page_url }}">
                         <span aria-hidden="true">&larr;</span>
                         Previous
                     </a>
@@ -52,7 +52,7 @@
             {% if next_page_url %}
                 <li>
                     <a
-                       href="?page={{ next_page_url }}">
+                       href="{{ next_page_url }}">
                         Next
                         <span aria-hidden="true">&rarr;</span>
                     </a>
