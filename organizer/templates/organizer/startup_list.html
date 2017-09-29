@@ -36,10 +36,10 @@
 {% if is_paginated %}
     <nav aria-label="...">
         <ul class="pager">
-            {% if startup_list.has_previous %}
+            {% if previous_page_url %}
                 <li>
                     <a
-                       href="?page={{ startup_list.previous_page_number }}">
+                       href="?page={{ previous_page_url }}">
                         <span aria-hidden="true">&larr;</span>
                         Previous
                     </a>
@@ -49,10 +49,10 @@
                 Page {{ startup_list.number }}
                 of {{ paginator.num_pages }}
             </li>
-            {% if startup_list.has_next %}
+            {% if next_page_url %}
                 <li>
                     <a
-                       href="?page={{ startup_list.next_page_number }}">
+                       href="?page={{ next_page_url }}">
                         Next
                         <span aria-hidden="true">&rarr;</span>
                     </a>
