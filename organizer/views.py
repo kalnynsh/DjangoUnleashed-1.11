@@ -162,6 +162,10 @@ class TagListView(View):
         )
 
 
+class TagPageListView(View):
+    pass
+
+
 class TagUpdateView(ObjectUpdateMixin, View):
     form_class = TagForm
     model = Tag
