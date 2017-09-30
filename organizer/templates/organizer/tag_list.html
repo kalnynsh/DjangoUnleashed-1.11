@@ -32,4 +32,31 @@
         </a>
     </button>
 </div>
+{% if is_paginated %}
+<nav aria-label="...">
+<ul class="pager">
+    {% if previous_page_url %}
+        <li>
+            <a href="{{ previous_page_url }}">
+                <span aria-hidden="true">&larr;</span>
+                Previous
+            </a>
+        </li>
+    {% endif %}
+    <li>
+        Page {{ tag_list.number }}
+        of  {{ paginator.num_pages }}
+    </li>
+    {% if next_page_url }
+        <li>
+            <a href="{{ next_page_url }}">
+                Next
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+        </li>
+    {% endif %}
+</ul>
+</nav>
+{% endif %}
+
 {% endblock content %}
