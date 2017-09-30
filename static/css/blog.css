@@ -296,3 +296,8 @@ h6, .h6 {
     font-size: 1.6rem;
     padding: 6px;
 }
+
+.blog-btn-margin > .btn.btn-info > a {
+    color: #fff;
+    font-weight: 500;
+}
