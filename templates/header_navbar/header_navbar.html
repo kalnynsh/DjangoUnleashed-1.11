@@ -10,7 +10,9 @@
             <a class="blog-nav-item" href="{% url 'organizer_tag_list' %}">Tags</a>
             <a class="blog-nav-item" href="{% url 'contact' %}">Contact</a>
             {% for page in flatpages %}
-                <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+                <a href="{{ page.get_absolute_url }}" class="blog-nav-color">
+                    {{ page.title }}
+                </a>
             {% endfor %}
         </nav>
     </div>
