@@ -1,3 +1,6 @@
+{% load staticfiles %}
+{% load flatpages %}
+{% get_flatpages as flatpages %}
 <div class="blog-masthead">
     <div class="container">
         <nav class="blog-nav">
@@ -6,6 +9,9 @@
             <a class="blog-nav-item" href="{% url 'organizer_startup_list' %}">Startups</a>
             <a class="blog-nav-item" href="{% url 'organizer_tag_list' %}">Tags</a>
             <a class="blog-nav-item" href="{% url 'contact' %}">Contact</a>
+            {% for page in flatpages %}
+                <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+            {% endfor %}
         </nav>
     </div>
 </div>
