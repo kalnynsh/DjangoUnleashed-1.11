@@ -32,5 +32,4 @@ urlpatterns = [
     url(r'^tag/', include(tag_urls)),
     url(r'^blog/', include(blog_urls)),
     url(r'^contact/', include(contact_urls)),
-    url(r'^page', include(flatpages_urls)),
 ]
