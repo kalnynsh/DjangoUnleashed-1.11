@@ -3,6 +3,7 @@
  */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 
 body {
   font-family: "Roboto", sans-serif;
@@ -47,8 +48,10 @@ h6, .h6 {
 .blog-nav-item {
   position: relative;
   display: inline-block;
+  font-family: 'Playfair Display', serif;
+  font-stretch: expanded;
   padding: 10px;
-  font-weight: 500;
+  font-weight: 600;
   color: #cdddeb;
 }
 .blog-nav-item:hover,
@@ -75,6 +78,11 @@ h6, .h6 {
   border-left: 5px solid transparent;
 }
 
+/* Nav logo image */
+.blog-nav-img {
+   height: 36px;
+   margin-right: 20px;
+}
 
 /*
  * Blog name and description
@@ -304,6 +312,3 @@ h6, .h6 {
     font-weight: 500;
 }
 
-.blog-nav-color {
-    color: #cdddeb;
-}
