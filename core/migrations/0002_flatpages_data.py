@@ -11,12 +11,12 @@ FLATPAGES = [
         "title": "About",
         "url": "/about/",
         "content":
-        '<p>This website is built in'
-        '<a href="https://www.djangoproject.com">'
-        'Django</a></p>'
-        '<p>The site design is based on the '
-        '<a href="https://getbootstrap.com> '
-        'Bootstrap Twitter</a>.</p>'
+            '<p>This website is built in '
+            '<a href="https://www.djangoproject.com">'
+            'Django</a>.</p>'
+            '<p> The site design is based on the '
+            '<a href="https://getbootstrap.com"> '
+            'Bootstrap Twitter</a>.</p>'
     }
 ]
 
