@@ -5,11 +5,13 @@
 {% endblock %}
 
 {% block content %}
-<form action="{% url 'contact' %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">
-        Contact Us!
-    </button>
-</form>
+<div class="contact-form">
+    <form action="{% url 'contact' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">
+            Contact Us!
+        </button>
+    </form>
+</div>
 {% endblock %}

@@ -187,6 +187,11 @@ h6, .h6 {
     padding: 0;
 }
 
+/* Form
+*/
+.contact-form {
+    margin-top: 30px;
+}
 
 /*
 * Input for form
@@ -231,7 +236,7 @@ h6, .h6 {
     margin-right: 6px;
 }
 
-# post_list.html
+/* post_list.html */
 .blog-label-edit-delete-post
 {
      display: block;
@@ -242,7 +247,7 @@ h6, .h6 {
     margin-top: 24px;
 }
 
-# post_detail.html
+/* post_detail.html */
 .blog-button-edit-post
 {
     display: inline-block;
@@ -263,7 +268,7 @@ h6, .h6 {
     margin-left: 6px;
 }
 
-#post_confirm_delete.html
+/* post_confirm_delete.html */
 .blog-btns-cancel-delete {
     display: block;
     margin-top: 24px;
@@ -332,3 +337,4 @@ h6, .h6 {
     margin-bottom: 18px;
     font-size: 38px;
 }
+
