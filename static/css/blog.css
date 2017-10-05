@@ -246,6 +246,10 @@ h6, .h6 {
     margin-right: 6px;
 }
 
+.blog-tag-update {
+    margin-top: 30px;
+}
+
 /* post_list.html */
 .blog-label-edit-delete-post
 {
@@ -348,3 +352,6 @@ h6, .h6 {
     font-size: 38px;
 }
 
+.blog-startup-update {
+    margin-top: 30px;
+}
