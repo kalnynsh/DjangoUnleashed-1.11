@@ -5,15 +5,17 @@
 {% endblock %}
 
 {% block content %}
-<form action="{{ startup.get_update_url }}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <div class="row">
-        <div class="col-md-offset-9 col-md-3">
-            <button type="submit" class="btn btn-primary">
-                Update Startup
-            </button>
+<div class="blog-startup-update">
+    <form action="{{ startup.get_update_url }}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="row">
+            <div class="col-md-offset-9 col-md-3">
+                <button type="submit" class="btn btn-primary">
+                    Update Startup
+                </button>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
 {% endblock %}
