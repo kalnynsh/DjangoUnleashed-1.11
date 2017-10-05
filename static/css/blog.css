@@ -171,13 +171,18 @@ h6, .h6 {
 .blog-footer {
   padding: 40px 0;
   color: #999;
-  text-align: center;
+  text-align: left;
   background-color: #f9f9f9;
   border-top: 1px solid #e5e5e5;
 }
+.blog-footer p:first-child {
+    margin-left: 25%;
+}
+
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
 
 /*
 * Input for form
