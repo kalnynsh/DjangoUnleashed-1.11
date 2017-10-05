@@ -211,9 +211,11 @@ h6, .h6 {
 }
 
 /* Tag list h2 margin-bottom */
-.blog-h2-tag-list
+.blog-tags-title
 {
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 18px;
+    font-size: 38px;
 }
 
 .blog-tag-edit-delete {
@@ -327,5 +329,6 @@ h6, .h6 {
 
 .blog-startup-title {
     margin-top: 30px;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
+    font-size: 38px;
 }
