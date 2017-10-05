@@ -5,26 +5,27 @@
 {% endblock %}
 
 {% block content %}
-<form action="{{ startup.get_delete_url }}" method="post">
-    {% csrf_token %}
+<div class="blog-startup-delete-confirm">
+    <form action="{{ startup.get_delete_url }}" method="post">
+        {% csrf_token %}
 
-        <div class="input-group">
-            <div class="form-control">
+        <div class="blog-startup-delete-confirm-label">
+            <span class="label label-danger">
                 Are you sure, you want to delete startup {{ startup.name }}?
-            </div>
+            </span>
         </div>
-        <br>
-    <div class="row">
-        <div class="blog-btn-tag-cancel-delete">
-            <div class="col-md-offset-2 col-md-4">
-                <button type="button" class="btn btn-primary">
-                    <a href="{{ startup.get_absolute_url }}">Cancel</a>
-                </button>
-                <button type="submit" class="btn btn-danger">
-                    Delete Startup
-                </button>
+
+            <div class="blog-btns-cancel-delete">
+
+                    <button type="button" class="btn btn-info">
+                        <a href="{{ startup.get_absolute_url }}">Cancel</a>
+                    </button>
+                    <button type="submit" class="btn btn-warning">
+                        Delete Startup
+                    </button>
+
             </div>
-        </div>
-    </div>
-</form>
+
+    </form>
+</div>
 {% endblock %}

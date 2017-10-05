@@ -288,8 +288,16 @@ h6, .h6 {
     margin-top: 24px;
 }
 
-.blog-btns-cancel-delete > .btn.btn-info {
-    margin-right: 12px;
+.blog-btns-cancel-delete .btn.btn-info {
+    margin-right: 12px;    
+}
+
+.blog-btns-cancel-delete .btn.btn-info a {
+  color: #fff;
+}
+
+.blog-btns-cancel-delete .btn.btn-warning {
+  color: #428bca;
 }
 
 .blog-post-delete-confirm {
@@ -325,11 +333,6 @@ h6, .h6 {
     margin-right: 12px;
 }
 
-.blog-btn-tag-cancel-delete .col-md-offset-2.col-md-4 .btn.btn-primary a
-{
-    color: #fff;
-}
-
 .blog-message {
     list-style: none;
 
@@ -357,4 +360,18 @@ h6, .h6 {
 
 .blog-startup-update {
     margin-top: 30px;
+}
+
+.blog-startup-delete-confirm {
+     margin-top: 40px;
+}
+
+.blog-startup-delete-confirm {
+     margin-top: 40px;
+}
+
+.blog-startup-delete-confirm-label {
+    line-height: 1.8;
+    font-size: 2.5rem;
+    margin-bottom: 16px;
 }
