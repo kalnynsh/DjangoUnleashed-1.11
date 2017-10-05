@@ -203,6 +203,13 @@ h6, .h6 {
  border: none;
 }
 
+/* post-form-update
+*/
+.post-form-update {
+    margin-top: 30px;
+}
+
+
 /* blog-button-margin
 */
 .blog-btn-add-article {
