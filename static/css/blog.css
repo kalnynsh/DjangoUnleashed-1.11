@@ -292,8 +292,11 @@ h6, .h6 {
     margin-right: 12px;
 }
 
+.blog-post-delete-confirm {
+    margin-top: 40px;
+}
 
-.blog-confirm-delete-post {
+.blog-post-delete-confirm-label {
     line-height: 1.8;
     font-size: 2.5rem;
     margin-bottom: 16px;

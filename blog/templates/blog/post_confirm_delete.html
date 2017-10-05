@@ -5,11 +5,11 @@
 
 {% block content %}
 <div>
-    <div>
+    <div class="blog-post-delete-confirm">
         <form action="{{ post.get_delete_url }}" method="post">
 
             {% csrf_token %}
-            <p class="blog-confirm-delete-post">
+            <p class="blog-post-delete-confirm-label">
                 <span class="label label-danger">
                     Are you sure?
                     You really want delete the blog post titled {{ post.title }}?
