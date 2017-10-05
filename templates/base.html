@@ -46,11 +46,11 @@
 <body>
 
 <!--Blog navbar header -->
-{% include "header_navbar/header_navbar.html" %}
+{% include "partials/header_navbar.html" %}
 <!--/ Blog navbar header -->
 
 <!-- Messages -->
-    {% include "messages/messages.html" %}
+    {% include "partials/messages.html" %}
 <!--/ Messages -->
 
 <div class="container">
@@ -64,20 +64,17 @@
                 {% block content %}
                 {% endblock %}
 
-
             </div><!-- /.blog-post -->
-
-            <!--{% include "pagination/pagination.html" %}-->
 
         </div><!-- /.blog-main -->
 
-        {% include "sidebar/sidebar.html" %}
+        {% include "partials/sidebar.html" %}
 
     </div><!-- /.row -->
 
 </div>
 
-{% include "footer/footer.html" %}
+{% include "partials/footer.html" %}
 
 <!-- Bootstrap core JavaScript -->
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
