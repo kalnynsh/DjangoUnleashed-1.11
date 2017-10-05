@@ -68,7 +68,9 @@
 
         </div><!-- /.blog-main -->
 
-        {% include "partials/sidebar.html" %}
+        {% block sidebar %}
+        <!-- {% include "partials/sidebar.html" %} Moved to post_list.html -->
+        {% endblock %}
 
     </div><!-- /.row -->
 
