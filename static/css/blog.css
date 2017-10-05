@@ -163,6 +163,9 @@ h6, .h6 {
   color: #999;
 }
 
+.blog-post-detail-title {
+    margin-top: 30px;
+}
 
 /*
  * Footer
