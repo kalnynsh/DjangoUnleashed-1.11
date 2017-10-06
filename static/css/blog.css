@@ -4,10 +4,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=PT+Serif');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
 
 body {
   font-family: "Roboto", sans-serif;
   color: #555;
+  /* Margin bottom by footer height */
+  margin-bottom: 97px;
 }
 
 h1, .h1,
@@ -33,7 +41,9 @@ h6, .h6 {
   }
 }
 
-
+.btn > a {
+  text-decoration: none;
+}
 /*
  * Masthead for nav
  */
@@ -164,7 +174,7 @@ h6, .h6 {
 }
 
 .blog-post-detail-title {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 /*
@@ -172,6 +182,9 @@ h6, .h6 {
  */
 
 .blog-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   padding: 26px 0;
   color: #999;
   text-align: left;
@@ -208,8 +221,8 @@ h6, .h6 {
 
 /* post-form-update
 */
-.post-form-update {
-    margin-top: 30px;
+.blog-post-form-update {
+    margin-top: 40px;
 }
 
 
@@ -228,7 +241,7 @@ h6, .h6 {
 /* Tag list h2 margin-bottom */
 .blog-tags-title
 {
-    margin-top: 30px;
+    margin-top: 40px;
     margin-bottom: 18px;
     font-size: 38px;
 }
@@ -251,14 +264,22 @@ h6, .h6 {
 }
 
 /* post_list.html */
-.blog-label-edit-delete-post
+.blog-post-edit-btn,
+.blog-post-delete-btn
 {
-     display: block;
-     margin-bottom: 40px;
+     display: inline-block;
+     margin-right: 10px;
+}
+.blog-post-edit-btn {
+  background-color: #84838C;
+}
+.blog-post-edit-btn > a,
+.blog-post-delete-btn > a {
+  color: #fff;
 }
 
 .blog-post-list-h2 {
-    margin-top: 24px;
+    margin-top: 64px;
 }
 
 /* post_detail.html */
@@ -289,7 +310,7 @@ h6, .h6 {
 }
 
 .blog-btns-cancel-delete .btn.btn-info {
-    margin-right: 12px;    
+    margin-right: 12px;
 }
 
 .blog-btns-cancel-delete .btn.btn-info a {
@@ -298,16 +319,6 @@ h6, .h6 {
 
 .blog-btns-cancel-delete .btn.btn-warning {
   color: #428bca;
-}
-
-.blog-post-delete-confirm {
-    margin-top: 40px;
-}
-
-.blog-post-delete-confirm-label {
-    line-height: 1.8;
-    font-size: 2.5rem;
-    margin-bottom: 16px;
 }
 
 .blog-btn-new-blog {
@@ -347,31 +358,49 @@ h6, .h6 {
     padding: 6px;
 }
 
-.blog-btn-margin > .btn.btn-info > a {
+.btn.btn-info > a {
     color: #fff;
     font-weight: 500;
 }
-
+/* startup_list.html */
 .blog-startup-title {
-    margin-top: 30px;
+    margin-top: 40px;
     margin-bottom: 18px;
     font-size: 38px;
 }
-
+.list-group-item a {
+  text-decoration: none;
+  display: inline-block;
+}
+.list-group-item a:hover {
+  color: #6B1745;
+}
+.list-group-item:nth-child(2n+1) {
+  background-color: #E1EEFF;
+}
 .blog-startup-update {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
-.blog-startup-delete-confirm {
-     margin-top: 40px;
+.blog-newslink-delete-confirm,
+.blog-post-delete-confirm,
+.blog-startup-delete-confirm,
+.blog-tag-delete-confirm {
+    margin-top: 70px;
 }
 
-.blog-startup-delete-confirm {
-     margin-top: 40px;
-}
-
-.blog-startup-delete-confirm-label {
-    line-height: 1.8;
-    font-size: 2.5rem;
-    margin-bottom: 16px;
+.blog-newslink-delete-confirm-label,
+.blog-post-delete-confirm-label,
+.blog-startup-delete-confirm-label,
+.blog-tag-delete-confirm-label {
+    display: inline-block;
+    padding: .6em;
+    font-size: 2.0rem;
+    line-height: 1.0;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    margin-bottom: 24px;
 }

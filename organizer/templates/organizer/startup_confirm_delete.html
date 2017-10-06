@@ -9,23 +9,17 @@
     <form action="{{ startup.get_delete_url }}" method="post">
         {% csrf_token %}
 
-        <div class="blog-startup-delete-confirm-label">
-            <span class="label label-danger">
+        <div class="blog-startup-delete-confirm-label label-danger">
                 Are you sure, you want to delete startup {{ startup.name }}?
-            </span>
         </div>
-
             <div class="blog-btns-cancel-delete">
-
                     <button type="button" class="btn btn-info">
                         <a href="{{ startup.get_absolute_url }}">Cancel</a>
                     </button>
                     <button type="submit" class="btn btn-warning">
                         Delete Startup
                     </button>
-
             </div>
-
     </form>
 </div>
 {% endblock %}

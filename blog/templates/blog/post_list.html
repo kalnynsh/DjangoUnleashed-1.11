@@ -37,12 +37,14 @@
             Read more&hellip;
         </a>
     </p>
-    <div class="blog-label-edit-delete-post">
+    <div class="blog-post-edit-btn btn btn-default">
         <a href="{{ post.get_update_url }}">
-            <span class="label label-default">Edit Post</span>
+            Edit Post
         </a>
+    </div>
+    <div class="blog-post-delete-btn btn btn-danger">
         <a href="{{ post.get_delete_url }}">
-            <span class="label label-warning">Delete Post</span>
+            Delete Post
         </a>
     </div>
 </article>

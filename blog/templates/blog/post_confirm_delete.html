@@ -4,16 +4,12 @@
 {{ block.super }} - Delete Blog post
 
 {% block content %}
-<div>
-    <div class="blog-post-delete-confirm">
+<div class="blog-post-delete-confirm">
         <form action="{{ post.get_delete_url }}" method="post">
-
             {% csrf_token %}
-            <p class="blog-post-delete-confirm-label">
-                <span class="label label-danger">
+            <p class="blog-post-delete-confirm-label label-danger">
                     Are you sure?
                     You really want delete the blog post titled {{ post.title }}?
-                </span>
             </p>
             <div class="blog-btns-cancel-delete">
                 <button type="submit" class="btn btn-info">
@@ -26,6 +22,5 @@
                 </button>
             </div>
         </form>
-    </div>
 </div>
 {% endblock content %}
