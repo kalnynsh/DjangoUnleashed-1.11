@@ -329,11 +329,25 @@ h6, .h6 {
     color: #fff;
     font-weight: 600;
 }
-
-.blog-edit-startup {
-    margin-bottom: 16px;
+/* Startup-detail */
+.blog-startup-edit-delete {
+    margin-bottom: 0px;
 }
 
+.blog-startup-edit-delete li {
+    display: inline-block;
+}
+
+.blog-startup-edit-delete li:first-child {
+    margin-left: -40px;
+    margin-right: 6px;
+}
+
+.blog-startup-dl dt {
+    margin-top: 16px;
+}
+
+/* link-edit-delete */
 .blog-link-edit-delete {
     list-style: none;
     margin-left: -40px;
