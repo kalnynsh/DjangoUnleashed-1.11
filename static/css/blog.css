@@ -233,7 +233,7 @@ h6, .h6 {
     margin-left: 16px;
 }
 
-.blog-btn-add-article > .btn.btn-info > a {
+.blog-btn-add-article .btn.btn-info a {
     color: #FFEDE5;
     font-weight: 600;
 }
@@ -270,9 +270,7 @@ h6, .h6 {
      display: inline-block;
      margin-right: 10px;
 }
-.blog-post-edit-btn {
-  background-color: #84838C;
-}
+
 .blog-post-edit-btn > a,
 .blog-post-delete-btn > a {
   color: #fff;
@@ -341,6 +339,15 @@ h6, .h6 {
 .blog-startup-edit-delete li:first-child {
     margin-left: -40px;
     margin-right: 6px;
+}
+
+.blog-startup-edit-delete li a {
+    text-decoration: none;
+    display: block;
+}
+
+.blog-startup-edit-delete li a:hover {
+    color: #E8C4D2;
 }
 
 .blog-startup-dl dt {
