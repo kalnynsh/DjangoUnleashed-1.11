@@ -34,10 +34,10 @@
             <footer> <!--The footer for article -->
                 {% if post.startups.all %}
                 <section>
-                    <h3>
+                    <h3 class="h3-post-detail">
                         Startup{{ post.startups.count|pluralize }}
                     </h3>
-                    <ul class="list-group>
+                    <ul class="list-group">
                             {% for startup in post.startups.all %}
                             <li class="list-group-item">
                     <a href="{{ startup.get_absolute_url }}">
@@ -51,15 +51,15 @@
 
                 {% if post.tags.all %}
                 <section>
-                    <h3>Tag{{ post.tags.count|pluralize }}</h3>
-                    <ul class="list-group>
-                            {% for tag in post.tags.all %}
+                    <h3 class="h3-post-detail">Tag{{ post.tags.count|pluralize }}</h3>
+                    <ul class="list-group">
+                        {% for tag in post.tags.all %}
                             <li class="list-group-item">
-                    <a href="{{ tag.get_absolute_url }}">
-                        {{ tag.name|title }}
-                    </a>
-                    </li>
-                    {% endfor %}
+                                <a href="{{ tag.get_absolute_url }}">
+                                    {{ tag.name|title }}
+                                </a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </section>
                 {% endif %}

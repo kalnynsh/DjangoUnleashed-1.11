@@ -44,6 +44,7 @@ h6, .h6 {
 .btn > a {
   text-decoration: none;
 }
+
 /*
  * Masthead for nav
  */
@@ -175,6 +176,11 @@ h6, .h6 {
 
 .blog-post-detail-title {
     margin-top: 40px;
+}
+
+.h3-post-detail {
+   margin-top: 20px;
+   margin-bottom: 10px;
 }
 
 /*
@@ -353,6 +359,9 @@ h6, .h6 {
 .blog-startup-dl dt {
     margin-top: 16px;
 }
+
+/* Startup update */
+
 
 /* link-edit-delete */
 .blog-link-edit-delete {
