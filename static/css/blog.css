@@ -334,6 +334,10 @@ h6, .h6 {
     font-weight: 600;
 }
 /* Startup-detail */
+.blog-startup-h3 {
+    margin: 20px 0 10px 0;
+}
+
 .blog-startup-edit-delete {
     margin-bottom: 0px;
 }
@@ -352,8 +356,10 @@ h6, .h6 {
     display: block;
 }
 
-.blog-startup-edit-delete li a:hover {
-    color: #E8C4D2;
+.blog-startup-edit-delete li a span.label-info:hover,
+.blog-link-edit-delete li a span.label-info:hover
+{
+    color: #BC86BD;
 }
 
 .blog-startup-dl dt {
@@ -372,6 +378,13 @@ h6, .h6 {
 .blog-link-edit-delete li {
     display: inline-block;
     margin-right: 12px;
+}
+
+.blog-startup-edit-delete li a span.label-danger:hover,
+.blog-link-edit-delete li a span.label-danger:hover
+{
+    color: #4C4945;
+    background-color: #FF8177;
 }
 
 .blog-message {
@@ -433,4 +446,8 @@ h6, .h6 {
     vertical-align: baseline;
     border-radius: .25em;
     margin-bottom: 24px;
+}
+
+.blog-newslink-form-update {
+    margin-top: 40px;
 }

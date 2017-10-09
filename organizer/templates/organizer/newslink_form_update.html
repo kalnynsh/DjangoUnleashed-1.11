@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block content %}
-<div class="blog-startup-form-update">
-<form action="{{ url newslink.get_update_url }}" method="post">
+<div class="blog-newslink-form-update">
+<form action="{{ newslink.get_update_url }}" method="post">
     {% csrf_token %}
     {% for field in form %}
         <div class="input-group">
