@@ -68,7 +68,7 @@ class StartupDeleteView(ObjectDeleteMixin, View):
     template_name = 'organizer/startup_confirm_delete.html'
 
 
-class StartupDetailView(DetailView, View):
+class StartupDetailView(DetailView):
     context_object_name = 'startup'
     model = Startup
     template_name = 'organizer/startup_detail.html'
@@ -135,7 +135,7 @@ class TagDeleteView(ObjectDeleteMixin, View):
     template_name = 'organizer/tag_confirm_delete.html'
 
 
-class TagDetailView(DetailView, View):
+class TagDetailView(DetailView):
     context_object_name = 'tag'
     model = Tag
     template_name = 'organizer/tag_detail.html'
