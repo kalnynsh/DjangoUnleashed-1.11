@@ -136,16 +136,18 @@ class TagCreateView(ObjectCreateMixin, View):
     template_name = 'organizer/tag_form.html'
 
 
-def tag_detail(request, slug):
-    tag = get_object_or_404(Tag, slug__iexact=slug)
-    template = 'organizer/tag_detail.html'
-    context = {'tag': tag}
+class TagDetailView(View):
 
-    return render(
-        request,
-        template,
-        context
-    )
+    def get(request, slug):
+        tag = get_object_or_404(Tag, slug__iexact=slug)
+        template = 'organizer/tag_detail.html'
+        context = {'tag': tag}
+
+        return render(
+            request,
+            template,
+            context
+        )
 
 
 class TagListView(View):
