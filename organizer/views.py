@@ -69,9 +69,7 @@ class StartupDeleteView(ObjectDeleteMixin, View):
 
 
 class StartupDetailView(DetailView):
-    context_object_name = 'startup'
     model = Startup
-    template_name = 'organizer/startup_detail.html'
 
 
 class StartupListView(View):
@@ -136,9 +134,7 @@ class TagDeleteView(ObjectDeleteMixin, View):
 
 
 class TagDetailView(DetailView):
-    context_object_name = 'tag'
     model = Tag
-    template_name = 'organizer/tag_detail.html'
 
 
 class TagListView(View):
