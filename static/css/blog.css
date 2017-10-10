@@ -268,6 +268,12 @@ h6, .h6 {
 .blog-tag-update {
     margin-top: 30px;
 }
+/* tag_detail.html */
+.blog-tag-detail-h2,
+.blog-tag-detail-h3
+{
+    margin: 20px 0 10px 0;
+}
 
 /* post_list.html */
 .blog-post-edit-btn,
@@ -415,12 +421,15 @@ h6, .h6 {
   text-decoration: none;
   display: inline-block;
 }
+
 .list-group-item a:hover {
   color: #6B1745;
 }
+
 .list-group-item:nth-child(2n+1) {
   background-color: #E1EEFF;
 }
+
 .blog-startup-update {
     margin-top: 40px;
 }
