@@ -67,16 +67,18 @@ class StartupDeleteView(ObjectDeleteMixin, View):
     template_name = 'organizer/startup_confirm_delete.html'
 
 
-def startup_detail(request, slug):
-    startup = get_object_or_404(Startup, slug__iexact=slug)
-    template = 'organizer/startup_detail.html'
-    context = {'startup': startup}
+class StartupDetailView(View):
 
-    return render(
-        request,
-        template,
-        context
-    )
+    def get(request, slug):
+        startup = get_object_or_404(Startup, slug__iexact=slug)
+        template = 'organizer/startup_detail.html'
+        context = {'startup': startup}
+
+        return render(
+            request,
+            template,
+            context
+        )
 
 
 class StartupListView(View):
