@@ -68,16 +68,17 @@ class StartupDeleteView(ObjectDeleteMixin, View):
 
 
 class StartupDetailView(View):
+    context_object_name = 'startup'
+    model = Startup
+    template_name = 'organizer/startup_detail.html'
 
-    def get(request, slug):
-        startup = get_object_or_404(Startup, slug__iexact=slug)
-        template = 'organizer/startup_detail.html'
-        context = {'startup': startup}
+    def get(self, request, slug):
+        obj = get_object_or_404(self.model, slug__iexact=slug)
 
         return render(
             request,
-            template,
-            context
+            self.template_name,
+            {self.context_object_name: obj}
         )
 
 
@@ -143,16 +144,17 @@ class TagDeleteView(ObjectDeleteMixin, View):
 
 
 class TagDetailView(View):
+    context_object_name = 'tag'
+    model = Tag
+    template_name = 'organizer/tag_detail.html'
 
-    def get(request, slug):
-        tag = get_object_or_404(Tag, slug__iexact=slug)
-        template = 'organizer/tag_detail.html'
-        context = {'tag': tag}
+    def get(self, request, slug):
+        obj = get_object_or_404(self.model, slug__iexact=slug)
 
         return render(
             request,
-            template,
-            context
+            self.template_name,
+            {self.context_object_name: obj}
         )
 
 
