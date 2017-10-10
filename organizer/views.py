@@ -14,6 +14,22 @@ class NewsLinkCreateView(ObjectCreateMixin, View):
     template_name = 'organizer/newslink_form.html'
 
 
+class NewsLinkDeleteView(View):
+
+    def get(self, request, pk):
+        newslink = get_object_or_404(NewsLink, pk=pk)
+
+        return render('organizer/newslink_confirm_delete.html',
+                      {'newslink': newslink})
+
+    def post(self, request, pk):
+        newslink = get_object_or_404(NewsLink, pk=pk)
+        startup = newslink.startup
+        newslink.delete()
+
+        return redirect(startup)
+
+
 class NewsLinkUpdateView(View):
     form_class = NewsLinkForm
     template_name = 'organizer/newslink_form_update.html'
@@ -38,22 +54,6 @@ class NewsLinkUpdateView(View):
                 'newslink': newslink,
             }
             return render(request, self.template_name, context)
-
-
-class NewsLinkDeleteView(View):
-
-    def get(self, request, pk):
-        newslink = get_object_or_404(NewsLink, pk=pk)
-
-        return render('organizer/newslink_confirm_delete.html',
-                      {'newslink': newslink})
-
-    def post(self, request, pk):
-        newslink = get_object_or_404(NewsLink, pk=pk)
-        startup = newslink.startup
-        newslink.delete()
-
-        return redirect(startup)
 
 
 class StartupCreateView(ObjectCreateMixin, View):
@@ -136,6 +136,12 @@ class TagCreateView(ObjectCreateMixin, View):
     template_name = 'organizer/tag_form.html'
 
 
+class TagDeleteView(ObjectDeleteMixin, View):
+    model = Tag
+    success_url = reverse_lazy('organizer_tag_list')
+    template_name = 'organizer/tag_confirm_delete.html'
+
+
 class TagDetailView(View):
 
     def get(request, slug):
@@ -206,9 +212,3 @@ class TagUpdateView(ObjectUpdateMixin, View):
     form_class = TagForm
     model = Tag
     template_name = 'organizer/tag_form_update.html'
-
-
-class TagDeleteView(ObjectDeleteMixin, View):
-    model = Tag
-    success_url = reverse_lazy('organizer_tag_list')
-    template_name = 'organizer/tag_confirm_delete.html'
