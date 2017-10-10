@@ -1,5 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render, get_object_or_404
+from django.views.generic import View
 
 
 class ObjectCreateMixin:
@@ -65,3 +66,18 @@ class ObjectDeleteMixin:
         obj.delete()
 
         return HttpResponseRedirect(self.success_url)
+
+
+class DetailView(View):
+    context_object_name = ''
+    model = None
+    template_name = ''
+
+    def get(self, request, slug):
+        obj = get_object_or_404(self.model, slug__iexact=slug)
+
+        return render(
+            request,
+            self.template_name,
+            {self.context_object_name: obj}
+        )

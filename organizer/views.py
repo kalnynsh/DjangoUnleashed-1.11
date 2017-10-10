@@ -6,7 +6,8 @@ from django.core.paginator import (Paginator,
 
 from .forms import TagForm, StartupForm, NewsLinkForm
 from .models import Tag, Startup, NewsLink
-from .utils import ObjectCreateMixin, ObjectUpdateMixin, ObjectDeleteMixin
+from .utils import (ObjectCreateMixin, ObjectUpdateMixin,
+                    ObjectDeleteMixin, DetailView)
 
 
 class NewsLinkCreateView(ObjectCreateMixin, View):
@@ -67,19 +68,10 @@ class StartupDeleteView(ObjectDeleteMixin, View):
     template_name = 'organizer/startup_confirm_delete.html'
 
 
-class StartupDetailView(View):
+class StartupDetailView(DetailView, View):
     context_object_name = 'startup'
     model = Startup
     template_name = 'organizer/startup_detail.html'
-
-    def get(self, request, slug):
-        obj = get_object_or_404(self.model, slug__iexact=slug)
-
-        return render(
-            request,
-            self.template_name,
-            {self.context_object_name: obj}
-        )
 
 
 class StartupListView(View):
@@ -143,19 +135,10 @@ class TagDeleteView(ObjectDeleteMixin, View):
     template_name = 'organizer/tag_confirm_delete.html'
 
 
-class TagDetailView(View):
+class TagDetailView(DetailView, View):
     context_object_name = 'tag'
     model = Tag
     template_name = 'organizer/tag_detail.html'
-
-    def get(self, request, slug):
-        obj = get_object_or_404(self.model, slug__iexact=slug)
-
-        return render(
-            request,
-            self.template_name,
-            {self.context_object_name: obj}
-        )
 
 
 class TagListView(View):
