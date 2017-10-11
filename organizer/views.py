@@ -6,11 +6,11 @@ from django.core.paginator import (Paginator,
 
 from .forms import TagForm, StartupForm, NewsLinkForm
 from .models import Tag, Startup, NewsLink
-from .utils import (ObjectCreateMixin, ObjectUpdateMixin,
+from .utils import (CreateView, ObjectUpdateMixin,
                     ObjectDeleteMixin)
 
 
-class NewsLinkCreateView(ObjectCreateMixin, View):
+class NewsLinkCreateView(CreateView, View):
     form_class = NewsLinkForm
     template_name = 'organizer/newslink_form.html'
 
@@ -57,7 +57,7 @@ class NewsLinkUpdateView(View):
             return render(request, self.template_name, context)
 
 
-class StartupCreateView(ObjectCreateMixin, View):
+class StartupCreateView(CreateView, View):
     form_class = StartupForm
     template_name = 'organizer/startup_form.html'
 
@@ -122,7 +122,7 @@ class StartupUpdateView(ObjectUpdateMixin, View):
     template_name = 'organizer/startup_form_update.html'
 
 
-class TagCreateView(ObjectCreateMixin, View):
+class TagCreateView(CreateView, View):
     form_class = TagForm
     template_name = 'organizer/tag_form.html'
 
