@@ -11,7 +11,9 @@ from .models import Tag, Startup, NewsLink
 
 class NewsLinkCreateView(CreateView, View):
     form_class = NewsLinkForm
-    template_name = 'organizer/newslink_form.html'
+    model = NewsLink
+    # Model allow derive the name of template
+    # template_name = 'organizer/newslink_form.html'
 
 
 class NewsLinkDeleteView(View):
@@ -58,7 +60,9 @@ class NewsLinkUpdateView(View):
 
 class StartupCreateView(CreateView, View):
     form_class = StartupForm
-    template_name = 'organizer/startup_form.html'
+    model = Startup
+    # Model allow derive the name of template
+    # template_name = 'organizer/startup_form.html'
 
 
 class StartupDeleteView(DeleteView):
@@ -124,7 +128,9 @@ class StartupUpdateView(UpdateView):
 
 class TagCreateView(CreateView, View):
     form_class = TagForm
-    template_name = 'organizer/tag_form.html'
+    model = Tag
+    # Model allow derive the name of template
+    # template_name = 'organizer/tag_form.html'
 
 
 class TagDeleteView(DeleteView):
