@@ -21,7 +21,6 @@ from organizer.urls import (
 from blog import urls as blog_urls
 from django.views.generic import RedirectView, TemplateView
 from contact import urls as contact_urls
-from django.contrib.flatpages import urls as flatpages_urls
 
 
 urlpatterns = [
