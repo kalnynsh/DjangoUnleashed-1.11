@@ -64,7 +64,8 @@ class StartupCreateView(CreateView, View):
 class StartupDeleteView(DeleteView):
     model = Startup
     success_url = reverse_lazy('organizer_startup_list')
-    template_name = 'organizer/startup_confirm_delete.html'
+    # Take from app._meta.app_label/model._mata.model_name+suffix
+    # template_name = 'organizer/startup_confirm_delete.html'
 
 
 class StartupDetailView(DetailView):
@@ -129,7 +130,8 @@ class TagCreateView(CreateView, View):
 class TagDeleteView(DeleteView):
     model = Tag
     success_url = reverse_lazy('organizer_tag_list')
-    template_name = 'organizer/tag_confirm_delete.html'
+    #  # Take from app._meta.app_label/model._mata.model_name+suffix
+    # template_name = 'organizer/tag_confirm_delete.html'
 
 
 class TagDetailView(DetailView):
