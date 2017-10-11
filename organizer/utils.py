@@ -4,7 +4,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render, get_object_or_404
 
-
+# # We are replacing it by using GCBV
 # class DetailView(View):
 #     context_object_name = ''
 #     model = None
@@ -68,8 +68,8 @@ from django.shortcuts import redirect, render, get_object_or_404
 #             model=self.object._meta.model_name,
 #             suffix=self.template_name_suffix
 #         )
-
-
+#
+# # We are replacing it by using GCBV
 # class CreateView(View):
 #     form_class = None
 #     template_name = ''
