@@ -86,6 +86,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 #             return render(request, self.template_name, {'form': bound_form})
 
 
+# We are replacing it GCBV
 class ObjectUpdateMixin:
     form_class = None
     model = None
@@ -117,6 +118,7 @@ class ObjectUpdateMixin:
             return render(request, self.template_name, context)
 
 
+# We are replacing it GCBV
 class ObjectDeleteMixin:
     model = None
     success_url = ''

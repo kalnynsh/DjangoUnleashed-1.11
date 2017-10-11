@@ -1,12 +1,12 @@
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import get_object_or_404, render, redirect
-from django.views.generic import DetailView, View, CreateView
+from django.views.generic import (CreateView, DeleteView,
+                                  DetailView, UpdateView, View)
 from django.core.paginator import (Paginator,
                                    EmptyPage, PageNotAnInteger)
 
 from .forms import TagForm, StartupForm, NewsLinkForm
 from .models import Tag, Startup, NewsLink
-from .utils import ObjectUpdateMixin, ObjectDeleteMixin
 
 
 class NewsLinkCreateView(CreateView, View):
@@ -61,7 +61,7 @@ class StartupCreateView(CreateView, View):
     template_name = 'organizer/startup_form.html'
 
 
-class StartupDeleteView(ObjectDeleteMixin, View):
+class StartupDeleteView(DeleteView):
     model = Startup
     success_url = reverse_lazy('organizer_startup_list')
     template_name = 'organizer/startup_confirm_delete.html'
@@ -115,7 +115,7 @@ class StartupListView(View):
         )
 
 
-class StartupUpdateView(ObjectUpdateMixin, View):
+class StartupUpdateView(UpdateView):
     form_class = StartupForm
     model = Startup
     template_name = 'organizer/startup_form_update.html'
@@ -126,7 +126,7 @@ class TagCreateView(CreateView, View):
     template_name = 'organizer/tag_form.html'
 
 
-class TagDeleteView(ObjectDeleteMixin, View):
+class TagDeleteView(DeleteView):
     model = Tag
     success_url = reverse_lazy('organizer_tag_list')
     template_name = 'organizer/tag_confirm_delete.html'
@@ -188,7 +188,7 @@ class TagPageListView(View):
         )
 
 
-class TagUpdateView(ObjectUpdateMixin, View):
+class TagUpdateView(UpdateView):
     form_class = TagForm
     model = Tag
     template_name = 'organizer/tag_form_update.html'
