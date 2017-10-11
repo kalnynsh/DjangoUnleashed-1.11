@@ -29,19 +29,8 @@ def post_detail(request, year, month, slug, parent_template=None):
     )
 
 
-class PostListView(View):
-    template_name = 'blog/post_list.html'
-
-    def get(self, request, parent_template=None):
-        post_list_obj = Post.objects.all()
-        context = {'post_list': post_list_obj,
-                   'parent_template': parent_template, }
-
-        return render(
-            request,
-            self.template_name,
-            context
-        )
+class PostListView(ListView):
+    model = Post
 
 
 class PostUpdateView(View):
