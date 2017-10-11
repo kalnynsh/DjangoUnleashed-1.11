@@ -1,13 +1,12 @@
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import get_object_or_404, render, redirect
-from django.views.generic import DetailView, View
+from django.views.generic import DetailView, View, CreateView
 from django.core.paginator import (Paginator,
                                    EmptyPage, PageNotAnInteger)
 
 from .forms import TagForm, StartupForm, NewsLinkForm
 from .models import Tag, Startup, NewsLink
-from .utils import (CreateView, ObjectUpdateMixin,
-                    ObjectDeleteMixin)
+from .utils import ObjectUpdateMixin, ObjectDeleteMixin
 
 
 class NewsLinkCreateView(CreateView, View):
