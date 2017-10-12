@@ -163,7 +163,7 @@ h6, .h6 {
  */
 
 .blog-post {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 .blog-post-title {
   margin-bottom: 5px;
@@ -465,7 +465,10 @@ h6, .h6 {
     margin: 20px 0 10px 0;
 }
 
-.blog-post-archive-year-h2,
+.blog-post-archive-year-h2 {
+    margin: 40px 0 10px 0;
+}
+
 .blog-post-archive-year-h3 {
-    margin: 20px 0 10px 0;
+    margin: 28px 0 10px 0;
 }
