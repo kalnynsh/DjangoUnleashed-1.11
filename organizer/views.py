@@ -16,20 +16,11 @@ class NewsLinkCreateView(CreateView, View):
     # template_name = 'organizer/newslink_form.html'
 
 
-class NewsLinkDeleteView(View):
+class NewsLinkDeleteView(DeleteView):
+    model = NewsLink
 
-    def get(self, request, pk):
-        newslink = get_object_or_404(NewsLink, pk=pk)
-
-        return render('organizer/newslink_confirm_delete.html',
-                      {'newslink': newslink})
-
-    def post(self, request, pk):
-        newslink = get_object_or_404(NewsLink, pk=pk)
-        startup = newslink.startup
-        newslink.delete()
-
-        return redirect(startup)
+    def get_success_url(self):
+        return self.object.startup.get_absolute_url()
 
 
 class NewsLinkUpdateView(View):
