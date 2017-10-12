@@ -15,6 +15,7 @@ class PostCreateView(CreateView):
 class PostArchiveYearView(YearArchiveView):
     model = Post
     date_field = 'pub_date'
+    make_object_list = True
 
 
 @require_http_methods(['HEAD', 'GET'])
