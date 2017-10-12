@@ -1,0 +1,40 @@
+{% extends parent_template|default:"blog/base_blog.html" %}
+
+{% block title %}
+{{ block.super }} - {{ year|date:"Y" }} Posts
+{% endblock %}
+
+{% block content %}
+<h3 class="blog-post-archive-year-h2">
+    Archives by Month
+</h3>
+<ul class="list-group">
+    {% for m in date_list %}
+    <li class="list-group-item">
+        <a href="">
+            {{ m|date:"F Y" }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+<nav aria-label="...">
+    <ul class="pager">
+        {% if previous_year %}
+        <li>
+            <a href="{% url 'blog_post_archive_year' previous_year|date:'Y' %}">
+                <span aria-hidden="true">&larr;</span>
+                Posts from {{ previous_year|date:'Y' }}
+            </a>
+        </li>
+        {% endif %}
+        {% if next_year %}
+        <li>
+            <a href="{% url 'blog_post_archive_year' next_year|date:'Y' %}">
+                Posts from {{ next_year|date:'Y' }}
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endblock %}
