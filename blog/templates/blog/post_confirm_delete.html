@@ -4,23 +4,25 @@
 {{ block.super }} - Delete Blog post
 
 {% block content %}
-<div class="blog-post-delete-confirm">
-        <form action="{{ post.get_delete_url }}" method="post">
-            {% csrf_token %}
-            <p class="blog-post-delete-confirm-label label-danger">
-                    Are you sure?
-                    You really want delete the blog post titled {{ post.title }}?
-            </p>
-            <div class="blog-btns-cancel-delete">
-                <button type="submit" class="btn btn-info">
-                    <a href="{{ post.get_absolute_url }}">
-                        Cancel
-                    </a>
-                </button>
-                <button type="submit" class="btn btn-warning">
-                    Delete Blog Post
-                </button>
-            </div>
-        </form>
+<div class="col-md-8">
+    <div class="blog-post-delete-confirm">
+            <form action="{{ post.get_delete_url }}" method="post">
+                {% csrf_token %}
+                <p class="blog-post-delete-confirm-label label-danger">
+                        Are you sure?
+                        You really want delete the blog post titled {{ post.title }}?
+                </p>
+                <div class="blog-btns-cancel-delete">
+                    <button type="submit" class="btn btn-info">
+                        <a href="{{ post.get_absolute_url }}">
+                            Cancel
+                        </a>
+                    </button>
+                    <button type="submit" class="btn btn-warning">
+                        Delete Blog Post
+                    </button>
+                </div>
+            </form>
+    </div>
 </div>
 {% endblock content %}
