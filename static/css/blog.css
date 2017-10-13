@@ -481,3 +481,7 @@ h6, .h6 {
 .blog-post-archive-month-h3 {
     margin: 28px 0 10px 0;
 }
+
+.blog-tag-list-btn-create {
+    margin-bottom: 30px;
+}
