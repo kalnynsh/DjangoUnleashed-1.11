@@ -376,7 +376,13 @@ h6, .h6 {
 }
 
 /* Startup update */
+.blog-startup-update-btn {
+    margin: 20px 0;
+}
 
+.blog-startup-update p {
+    margin-bottom: 18px;
+}
 
 /* link-edit-delete */
 .blog-link-edit-delete {

@@ -9,11 +9,11 @@
     <form action="{{ startup.get_update_url }}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-
+            <div class="blog-startup-update-btn">
                 <button type="submit" class="btn btn-primary">
                     Update Startup
                 </button>
-
+            </div>
     </form>
 </div>
 {% endblock %}
