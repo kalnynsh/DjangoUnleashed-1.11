@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views.decorators.http import require_http_methods
-from django.views.generic import CreateView, ListView, View, YearArchiveView
+from django.views.generic import CreateView, ListView, View, \
+                                 YearArchiveView, MonthArchiveView
 
 from .models import Post
 from .forms import PostForm
@@ -10,6 +11,12 @@ class PostCreateView(CreateView):
     form_class = PostForm
     model = Post
     # template_name = 'blog/post_form.html' derive from model name
+
+
+class PostArchiveMonthView(MonthArchiveView):
+    model = Post
+    date_field = 'pub_date'
+    month_format = '%m'
 
 
 class PostArchiveYearView(YearArchiveView):
