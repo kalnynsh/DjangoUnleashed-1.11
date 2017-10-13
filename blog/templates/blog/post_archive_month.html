@@ -54,21 +54,21 @@
         {% endfor %}
 
     </div><!-- eight columns -->
-    <div class="col-md-4">
+    <div class="col-md-4 blog-post-archive-month-aside">
 
-        <p>
+        <p class="blog-post-archive-month-all">
             <a href="{% url 'blog_post_archive_year' month|date:'Y' %}">
                 All Posts from {{ month|date:"Y" }}
             </a>
         </p>
-        <p>
+        <p class="blog-post-archive-month-latest">
             <a href="{% url 'blog_post_list' %}">
                 Latest Posts
             </a>
         </p>
 
         <div class="blog-btn-new-blog">
-            <button type="button" class="btn btn-info">
+            <button type="button" class="btn btn-primary">
                 <a href="{% url 'blog_post_create' %}">
                     Write New Blog Post
                 </a>
