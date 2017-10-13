@@ -270,10 +270,12 @@ h6, .h6 {
     margin-top: 30px;
 }
 /* tag_detail.html */
-.blog-tag-detail-h2,
-.blog-tag-detail-h3
-{
+.blog-tag-detail-h3 {
     margin: 20px 0 10px 0;
+}
+
+.blog-tag-detail-h2 {
+    margin: 40px 0 16px 0;
 }
 
 /* post_list.html */
