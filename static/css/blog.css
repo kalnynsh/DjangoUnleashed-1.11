@@ -386,6 +386,17 @@ h6, .h6 {
     margin-bottom: 18px;
 }
 
+/* startup list*/
+.blog-startup-list-btn {
+    margin: 30px 0 16px 0;
+}
+
+
+.blog-startup-list-btn a {
+    color: #fff;
+    font-weight: 500;
+}
+
 /* link-edit-delete */
 .blog-link-edit-delete {
     list-style: none;
