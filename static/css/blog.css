@@ -292,7 +292,8 @@ h6, .h6 {
 }
 
 .blog-post-list-h2 {
-    margin-top: 64px;
+    margin-top: 40px;
+    margin-bottom: 16px;
 }
 
 /* post_detail.html */
@@ -335,10 +336,11 @@ h6, .h6 {
 }
 
 .blog-btn-new-blog {
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
-.blog-btn-new-blog > .btn.btn-info > a {
+.blog-btn-new-blog > .btn.btn-primary > a {
     color: #fff;
     font-weight: 600;
 }
