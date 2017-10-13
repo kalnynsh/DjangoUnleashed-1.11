@@ -504,5 +504,10 @@ h6, .h6 {
 }
 
 .blog-tag-list-btn-create {
+    margin-top: 16px;
     margin-bottom: 30px;
+}
+
+.blog-tag-list-btn-create a {
+    color: #fff;
 }
