@@ -38,3 +38,10 @@ class Post(models.Model):
 
     def get_archive_year_url(self):
         return reverse('blog_post_archive_year', kwargs={'year': self.pub_date})
+
+    def get_archive_month_url(self):
+        return reverse(
+            'blog_post_archive_month',
+            kwargs={'year': self.pub_date.year,
+                    'month': self.pub_date.month}
+        )
