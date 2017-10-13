@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="col-md-8">
 <h2 class="blog-startup-title">Startup List</h2>
 <ul class="list-group">
     {% for startup in startup_list %}
@@ -61,4 +62,5 @@
         </ul>
     </nav>
 {% endif %}
+</div>
 {% endblock content %}

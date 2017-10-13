@@ -60,7 +60,7 @@
         <ul class="list-group">
             {% for m in date_list %}
             <li class="list-group-item">
-                <a href="">
+                <a href="{% url 'blog_post_archive_month' m|date:'Y' m|date:'n' %}">
                     {{ m|date:"F Y" }}
                 </a>
             </li>
