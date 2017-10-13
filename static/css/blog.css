@@ -344,6 +344,11 @@ h6, .h6 {
     color: #fff;
     font-weight: 600;
 }
+
+.blog-btn-new-blog-archive {
+    margin-left: 70px;
+}
+
 /* Startup-detail */
 .blog-startup-h3 {
     margin: 20px 0 10px 0;
