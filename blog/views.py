@@ -73,7 +73,7 @@ class PostListView(ArchiveIndexView):
     date_field = 'pub_date'
     make_object_list = True
     model = Post
-    paginate_by = 5
+    paginate_by = 3
     template_name = 'blog/post_list.html'
 
 
