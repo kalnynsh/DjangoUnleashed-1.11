@@ -130,7 +130,7 @@ h6, .h6 {
 /* Sidebar modules for boxing content */
 .sidebar-module {
   padding: 15px;
-  margin: 0 -15px 15px;
+  margin: 0 -15px 0;
 }
 .sidebar-module-inset {
   margin-top: 198px;
@@ -145,6 +145,9 @@ h6, .h6 {
   margin-bottom: 0;
 }
 
+.sidebar-module ul {
+    list-style-type: square;
+}
 
 /* Pagination */
 .pager {
