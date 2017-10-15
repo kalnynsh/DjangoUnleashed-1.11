@@ -1,26 +1,28 @@
 {% if is_paginated %}
-<nav aria-label="...">
-<ul class="pager">
-    {% if previous_page_url %}
+<div class="col-md-8">
+    <nav aria-label="...">
+    <ul class="pager">
+        {% if previous_page_url %}
+            <li>
+                <a href="{{ previous_page_url }}">
+                    <span aria-hidden="true">&larr;</span>
+                    Previous
+                </a>
+            </li>
+        {% endif %}
         <li>
-            <a href="{{ previous_page_url }}">
-                <span aria-hidden="true">&larr;</span>
-                Previous
-            </a>
+            Page {{ page_obj.number }}
+            of  {{ paginator.num_pages }}
         </li>
-    {% endif %}
-    <li>
-        Page {{ page_obj.number }}
-        of  {{ paginator.num_pages }}
-    </li>
-    {% if next_page_url %}
-        <li>
-            <a href="{{ next_page_url }}">
-                Next
-                <span aria-hidden="true">&rarr;</span>
-            </a>
-        </li>
-    {% endif %}
-</ul>
-</nav>
+        {% if next_page_url %}
+            <li>
+                <a href="{{ next_page_url }}">
+                    Next
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+    </nav>
+</div>
 {% endif %}
