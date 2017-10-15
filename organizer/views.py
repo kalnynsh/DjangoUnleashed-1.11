@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy, reverse
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import render
 from django.views.generic import (CreateView, DeleteView,
                                   DetailView, UpdateView, View)
 from django.core.paginator import (Paginator,
@@ -7,13 +7,12 @@ from django.core.paginator import (Paginator,
 
 from .forms import TagForm, StartupForm, NewsLinkForm
 from .models import Tag, Startup, NewsLink
+from core.utils import UpdateView
 
 
 class NewsLinkCreateView(CreateView, View):
     form_class = NewsLinkForm
     model = NewsLink
-    # Model allow derive the name of template
-    # template_name = 'organizer/newslink_form.html'
 
 
 class NewsLinkDeleteView(DeleteView):
@@ -26,14 +25,11 @@ class NewsLinkDeleteView(DeleteView):
 class NewsLinkUpdateView(UpdateView):
     form_class = NewsLinkForm
     model = NewsLink
-    template_name_suffix = '_form_update'
 
 
 class StartupCreateView(CreateView, View):
     form_class = StartupForm
     model = Startup
-    # Model allow derive the name of template
-    # template_name = 'organizer/startup_form.html'
 
 
 class StartupDeleteView(DeleteView):
@@ -94,21 +90,16 @@ class StartupListView(View):
 class StartupUpdateView(UpdateView):
     form_class = StartupForm
     model = Startup
-    template_name_suffix = '_form_update'
 
 
 class TagCreateView(CreateView, View):
     form_class = TagForm
     model = Tag
-    # Model allow derive the name of template
-    # template_name = 'organizer/tag_form.html'
 
 
 class TagDeleteView(DeleteView):
     model = Tag
     success_url = reverse_lazy('organizer_tag_list')
-    #  # Take from app._meta.app_label/model._mata.model_name+suffix
-    # template_name = 'organizer/tag_confirm_delete.html'
 
 
 class TagDetailView(DetailView):
@@ -170,4 +161,3 @@ class TagPageListView(View):
 class TagUpdateView(UpdateView):
     form_class = TagForm
     model = Tag
-    template_name_suffix = '_form_update'
