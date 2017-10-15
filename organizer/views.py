@@ -26,7 +26,7 @@ class NewsLinkDeleteView(DeleteView):
 class NewsLinkUpdateView(UpdateView):
     form_class = NewsLinkForm
     model = NewsLink
-    template_name_suffix = '_form_update.html'
+    template_name_suffix = '_form_update'
 
 
 class StartupCreateView(CreateView, View):
@@ -94,7 +94,7 @@ class StartupListView(View):
 class StartupUpdateView(UpdateView):
     form_class = StartupForm
     model = Startup
-    template_name = 'organizer/startup_form_update.html'
+    template_name_suffix = '_form_update'
 
 
 class TagCreateView(CreateView, View):
@@ -170,4 +170,4 @@ class TagPageListView(View):
 class TagUpdateView(UpdateView):
     form_class = TagForm
     model = Tag
-    template_name = 'organizer/tag_form_update.html'
+    template_name_suffix = '_form_update'
