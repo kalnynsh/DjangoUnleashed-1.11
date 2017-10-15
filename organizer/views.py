@@ -1,16 +1,17 @@
 from django.urls import reverse_lazy, reverse
 from django.shortcuts import render
-from django.views.generic import (CreateView, DeleteView,
-                                  DetailView, UpdateView, View)
+from django.views.generic import (
+    CreateView, DeleteView, DetailView, ListView, View)
 from django.core.paginator import (Paginator,
                                    EmptyPage, PageNotAnInteger)
 
 from .forms import TagForm, StartupForm, NewsLinkForm
 from .models import Tag, Startup, NewsLink
 from core.utils import UpdateView
+from .utils import PageLinksMixin
 
 
-class NewsLinkCreateView(CreateView, View):
+class NewsLinkCreateView(CreateView):
     form_class = NewsLinkForm
     model = NewsLink
 
@@ -27,7 +28,7 @@ class NewsLinkUpdateView(UpdateView):
     model = NewsLink
 
 
-class StartupCreateView(CreateView, View):
+class StartupCreateView(CreateView):
     form_class = StartupForm
     model = Startup
 
@@ -43,48 +44,9 @@ class StartupDetailView(DetailView):
     model = Startup
 
 
-class StartupListView(View):
-    page_kwarg = 'page'
+class StartupListView(PageLinksMixin, ListView):
+    model = Startup
     paginate_by = 5  # 5 items per page
-    template_name = 'organizer/startup_list.html'
-
-    def get(self, request):
-        startups = Startup.objects.all()
-        paginator = Paginator(startups, self.paginate_by)
-        page_number = request.GET.get(self.page_kwarg)
-        try:
-            page = paginator.page(page_number)
-        except PageNotAnInteger:
-            page = paginator.page(1)  # First
-        except EmptyPage:
-            page = paginator.page(paginator.num_pages)  # Last
-        if page.has_previous():
-            prev_url = "?{pkw}={n}".format(
-                pkw=self.page_kwarg,
-                n=page.previous_page_number()
-            )
-        else:
-            prev_url = None
-        if page.has_next():
-            next_url = "?{pkw}={n}".format(
-                pkw=self.page_kwarg,
-                n=page.next_page_number()
-            )
-        else:
-            next_url = None
-        context = {
-            'is_paginated': page.has_other_pages(),
-            'paginator': paginator,
-            'next_page_url': next_url,
-            'previous_page_url': prev_url,
-            'startup_list': page,
-        }
-
-        return render(
-            request,
-            self.template_name,
-            context
-        )
 
 
 class StartupUpdateView(UpdateView):
@@ -106,20 +68,9 @@ class TagDetailView(DetailView):
     model = Tag
 
 
-class TagListView(View):
-    template_name = 'organizer/tag_list.html'
-
-    def get(self, request):
-        tags = Tag.objects.all()
-        context = {
-            'tag_list': tags,
-        }
-
-        return render(
-            request,
-            self.template_name,
-            context
-        )
+class TagListView(PageLinksMixin, ListView):
+    model = Tag
+    paginate_by = 5
 
 
 class TagPageListView(View):

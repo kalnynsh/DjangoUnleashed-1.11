@@ -158,6 +158,7 @@ settings.py.dev
 ## Log files
 /log/*
 /_log/*
+/_log/*/*
 
 ## Staff for Front End
 /client/*
