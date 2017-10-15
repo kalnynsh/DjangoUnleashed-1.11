@@ -7,60 +7,33 @@
 
 {% block content %}
 <div class="col-md-8">
-<h2 class="blog-startup-title">Startup List</h2>
-<ul class="list-group">
-    {% for startup in startup_list %}
-    <li class="list-group-item">
-        <a href="{{ startup.get_absolute_url }}">
-            {{ startup.name }}
-        </a>
-        <a href="{{ startup.get_update_url }}">
-            <span class="label label-info">Edit Startup</span>
-        </a>
-        <a href="{{ startup.get_delete_url }}">
-            <span class="label label-danger">Delete Startup</span>
-        </a>
-    </li>
-    {% empty %}
-    <li class="list-group-item">
-        <em>No Startups Available</em>
-    </li>
-    {% endfor %}
-</ul>
-<div class="blog-startup-list-btn">
-    <button class="btn btn-primary">
-        <a href="{% url 'organizer_startup_create' %}">
-            Create New Startup
-        </a>
-    </button>
-</div>
-{% if is_paginated %}
-    <nav aria-label="...">
-        <ul class="pager">
-            {% if previous_page_url %}
-                <li>
-                    <a
-                       href="{{ previous_page_url }}">
-                        <span aria-hidden="true">&larr;</span>
-                        Previous
-                    </a>
-                </li>
-            {% endif %}
-            <li>
-                Page {{ page_obj.number }}
-                of {{ paginator.num_pages }}
-            </li>
-            {% if next_page_url %}
-                <li>
-                    <a
-                       href="{{ next_page_url }}">
-                        Next
-                        <span aria-hidden="true">&rarr;</span>
-                    </a>
-                </li>
-            {% endif %}
-        </ul>
-    </nav>
-{% endif %}
+    <h2 class="blog-startup-title">Startup List</h2>
+    <ul class="list-group">
+        {% for startup in startup_list %}
+        <li class="list-group-item">
+            <a href="{{ startup.get_absolute_url }}">
+                {{ startup.name }}
+            </a>
+            <a href="{{ startup.get_update_url }}">
+                <span class="label label-info">Edit Startup</span>
+            </a>
+            <a href="{{ startup.get_delete_url }}">
+                <span class="label label-danger">Delete Startup</span>
+            </a>
+        </li>
+        {% empty %}
+        <li class="list-group-item">
+            <em>No Startups Available</em>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="blog-startup-list-btn">
+        <button class="btn btn-primary">
+            <a href="{% url 'organizer_startup_create' %}">
+                Create New Startup
+            </a>
+        </button>
+    </div>
+    {% include "partials/pagination.html" %}
 </div>
 {% endblock content %}
