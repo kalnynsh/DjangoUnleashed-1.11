@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views.decorators.http import require_http_methods
-from django.views.generic import CreateView, View, YearArchiveView, \
-                                 MonthArchiveView, ArchiveIndexView
+from django.views.generic import (ArchiveIndexView, CreateView, DateDetailView,
+                                  MonthArchiveView, View, YearArchiveView)
 
 from .models import Post
 from .forms import PostForm
@@ -64,6 +64,11 @@ def post_detail(request, year, month, slug, parent_template=None):
         template,
         context,
     )
+
+
+class PostDetailView(DateDetailView):
+    date_field = 'pub_date'
+    model = Post
 
 
 class PostListView(ArchiveIndexView):
