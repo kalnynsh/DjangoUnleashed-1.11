@@ -11,7 +11,7 @@ class PageLinksMixin:
         return None
 
     def previous_page(self, page):
-        if page.has_previous():
+        if page.has_previous() and page.number > 2:
             return self._page_urls(page.previous_page_number())
         return None
 
