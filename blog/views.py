@@ -69,6 +69,7 @@ def post_detail(request, year, month, slug, parent_template=None):
 class PostDetailView(DateDetailView):
     date_field = 'pub_date'
     model = Post
+    month_format = '%m'
 
 
 class PostListView(ArchiveIndexView):
