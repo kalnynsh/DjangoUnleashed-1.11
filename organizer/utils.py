@@ -32,7 +32,9 @@ class PageLinksMixin:
         page = context.get('page_obj')
         if page is not None:
             context.update({
+                'first_page_url': self.first_page(page),
                 'previous_page_url': self.previous_page(page),
                 'next_page_url': self.next_page(page),
+                'last_page_url': self.last_page(page),
             })
         return context
