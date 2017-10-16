@@ -16,7 +16,8 @@ class PageLinksMixin:
         return None
 
     def next_page(self, page):
-        if page.has_next():
+        last_page = page.paginator.num_pages
+        if page.has_next() and page.number < (last_page - 1):
             return self._page_urls(page.next_page_number())
         return None
 
