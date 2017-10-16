@@ -21,7 +21,8 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog_post_detail', kwargs={'year': self.pub_date.year,
-                                                   'month': self.pub_date.month,
+                                                   'month': self.pub_date.strftime('%b').lower(),
+                                                   'day': self.pub_date.day,
                                                    'slug': self.slug})
 
     def get_update_url(self):
