@@ -71,6 +71,16 @@ class PostDetailView(DateDetailView):
     model = Post
     month_format = '%m'
 
+    def get_day(self):
+        return '1'
+
+    def _make_single_date_lookup(self, date):
+        date_field = self.get_date_field()
+        return {
+            date_field + '__year': date.year,
+            date_field + '__month': date.month,
+        }
+
 
 class PostListView(ArchiveIndexView):
     allow_empty = True
