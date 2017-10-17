@@ -1,10 +1,10 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from django.views.decorators.http import require_http_methods
-from django.views.generic import (ArchiveIndexView, CreateView, DateDetailView,
+from django.views.generic import (ArchiveIndexView, CreateView, DetailView,
                                   MonthArchiveView, View, YearArchiveView)
 
 from .models import Post
 from .forms import PostForm
+from .utils import PostGetMixin
 
 
 class PostArchiveMonthView(MonthArchiveView):
@@ -48,20 +48,8 @@ class PostDeleteView(View):
         return redirect('blog_post_list')
 
 
-class PostDetailView(DateDetailView):
-    date_field = 'pub_date'
+class PostDetailView(PostGetMixin, DetailView):
     model = Post
-    month_format = '%m'
-
-    def get_day(self):
-        return '1'
-
-    def _make_single_date_lookup(self, date):
-        date_field = self.get_date_field()
-        return {
-            date_field + '__year': date.year,
-            date_field + '__month': date.month,
-        }
 
 
 class PostListView(ArchiveIndexView):
