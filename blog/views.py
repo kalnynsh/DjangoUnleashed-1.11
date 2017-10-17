@@ -26,7 +26,6 @@ class PostCreateView(CreateView):
 
 
 class PostDeleteView(View):
-
     def get(self, request, year, month, slug):
         post = get_object_or_404(
             Post,
@@ -47,23 +46,6 @@ class PostDeleteView(View):
         )
         post.delete()
         return redirect('blog_post_list')
-
-
-@require_http_methods(['HEAD', 'GET'])
-def post_detail(request, year, month, slug, parent_template=None):
-    post_detail_obj = get_object_or_404(
-        Post,
-        pub_date__year=year,
-        pub_date__month=month,
-        slug__iexact=slug)
-    template = 'blog/post_detail.html'
-    context = {'post': post_detail_obj, 'parent_template': parent_template, }
-
-    return render(
-        request,
-        template,
-        context,
-    )
 
 
 class PostDetailView(DateDetailView):
