@@ -4,6 +4,9 @@ from .models import Post
 
 
 class PostGetMixin:
+    month_url_kwarg = 'month'
+    year_url_kwarg = 'year'
+    slug_url_kwarg = 'slug'
 
     errors = {
         'url_kwargs':
@@ -13,13 +16,13 @@ class PostGetMixin:
     }
 
     def get_object(self, queryset=None):
-        year = self.kwargs.get('year')
-        month = self.kwagrs.get('month')
-        slug = self.kwargs.get('slug')
+        year = self.kwargs.get(self.month_url_kwarg)
+        month = self.kwagrs.get(self.year_url_kwarg)
+        slug = self.kwargs.get(self.slug_url_kwarg)
 
         if (year is None
-            or month is None
-            or slug is None):
+                or month is None
+                or slug is None):
             raise AttributeError(
                 self.errors['url_kwargs'].format(self.__class__.__name__)
             )
